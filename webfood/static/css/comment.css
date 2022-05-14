@@ -1,0 +1,10 @@
+form p  > label {
+    display: none;
+}
+
+#id_commentText{
+    border-radius: 6px;
+    height: 60px;
+    width: 100%;
+}
+
