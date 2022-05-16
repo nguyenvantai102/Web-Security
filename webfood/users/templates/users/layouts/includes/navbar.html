@@ -1,13 +1,264 @@
 {% load static %}
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.css' %}">
-<link rel="stylesheet" href="{% static '/css/style.css' %}">
-<link rel="stylesheet" href="{% block css %}{% endblock %}">
+
+
 
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Almendra&family=League+Spartan:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;400&family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
     
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    nav {
+    	margin-bottom: 10px;
+        /* background-image: linear-gradient(to bottom, blue 10%, pink); */
+        {% comment %} background-color: #5b6467;
+        background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%); {% endcomment %}
+	    /* box-shadow: 0px 15px 10px -15px #111; */
+        background: #f8f9fa;
+    }
+
+    .navbar-brand {
+        font-family: 'Almendra', serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .nav a  {
+        font-family: 'Poppins', sans-serif;
+        color: #696d72;
+    	/* font-weight: bold; */
+    }
+
+    .active {
+        background-color: #80a4cf;
+        border-radius: 6px;
+    }
+
+    .nav-item + .nav-item {
+        margin: 0 5px 0 5px;
+    }
+
+    .nav-item:hover {
+        background-color: #80a4cf;
+        border-radius: 6px; 
+    }
+
+    .nav-link:hover {
+        color: #696d72;
+    }
+
+    .nav-link i:hover{
+        color: #696d72;
+    }
+
+    /* overlay */
+    .overlay {
+    	height: 100%;
+    	width: 100%;
+    	display: none;
+    	position: fixed;
+    	z-index: 10;
+    	top: 0;
+    	left: 0;
+    	background-color: rgb(0,0,0);
+    	background-color: rgba(0,0,0, 0.9);
+    }
+
+    .overlay-content {
+    	position: relative;
+    	top: 46%;
+    	width: 80%;
+    	text-align: center;
+    	margin-top: 30px;
+    	margin: auto;
+    }
+
+    .overlay .closebtn {
+    	position: absolute;
+    	top: 20px;
+    	right: 45px;
+    	font-size: 60px;
+    	cursor: pointer;
+    	color: white;
+    }
+
+    .overlay .closebtn:hover {
+    	color: rgb(192, 35, 35);
+    }
+
+    .overlay input[type=text] {
+    	padding: 15px;
+    	font-size: 17px;
+    	border: none;
+    	float: left;
+    	width: 80%;
+    	background: white;
+    	border-radius: 20px 0 0 20px;
+    }
+
+    .overlay input[type=text]:hover {
+    	background: #f1f1f1;
+    }
+
+    .overlay button {
+    	float: left;
+    	width: 15%;
+    	padding: 15px;
+    	background: #ddd;
+    	font-size: 17px;
+    	border: none;
+    	cursor: pointer;
+    	border-radius: 0 20px 20px 0;
+    }
+
+    .overlay button:hover {
+        background: #0082e6;
+    }
+
+
+    .carousel-item img {
+    	background-size: 20% 20%;
+    }
+
+
+
+    #food a {
+    	text-decoration: none;
+    }
+
+/* INFOR Calories */
+    #info_calories .block-heading {
+    	background-image: url("../images/titleBorder.png");
+    	background-repeat: repeat-x;
+    	height: 20px;
+    	margin: 30px 0;
+    	text-align: center;
+    }
+
+    #info_calories .block-heading h3 {
+    	background: #fff;
+    	display: inline-block;
+    	color: #000;
+    	margin-top: -28px;
+    	padding: 4px 5px 2px 30px;
+    	border: 1px solid #dedede;
+    }
+    #info_calories .block-heading h3:hover {
+    	box-shadow: 0 0 6px #dedede;
+    }
+
+/*	 Feature Start
+    ==================================================*/
+    #features .block {
+    	background:#90c322;
+    	color: #fff;
+    	padding: 4px;
+    	margin-bottom: 8px;
+    }
+    #features .block .media {
+    	border: 1px solid #fff;
+    }
+    #features .block .media-heading {
+    	margin-top: 10px;
+    	margin-bottom: 0;
+    	color: #fff;
+    }
+    #features .block i {
+    	font-size: 60px;
+    	margin: 15px 20px;
+    }
+
+    .products-heading {
+    	margin-top: 20px;
+    	background: url("../images/titleBorder.png");
+    	background-repeat: repeat-x;
+    }
+    .products-heading h2 {
+    	margin: 0px 0 20px ;
+    	border-top: 5px solid #90c322;
+    	display: inline-block;
+    }
+
+    /* MENU */
+    #menu .block-heading {
+    	background-image: url("../images/titleBorder.png");
+    	background-repeat: repeat-x;
+    	height: 20px;
+    	text-align: center;
+    	margin: 40px 0;
+    }
+
+    #menu .block {
+    	margin-top: 30px;
+    }
+    #menu .block-heading h2 {
+    	background: #fff;
+    	display: inline-block;
+    	color: rgb(12, 116, 236);
+    	margin-top: -28px;
+    	padding: 5px 30px 10px 30px;
+    	border: 1px solid #f01123;
+    }
+    #menu .block-heading h2:hover {
+    	box-shadow: 0 0 5px #dedede;
+    }
+
+    #scopy {
+    	float: right;
+    	position: fixed;
+    	left: 80%;
+    }
+
+    /* Search */
+    .mycontainer {
+    	height: 95%;
+    	overflow: auto;
+    }
+
+    .card-body-base {
+    	height: 16em;
+    	border: 1px solid rgb(0, 250, 167);
+    	border-radius: 3px; 
+    }
+
+    .overlay button {
+    	width: 100%;
+    	padding: 10px 5px;
+    	font-size: 15px;
+    	background-color: #5a63dd;
+    }
+
+    .card-base {
+    	height: 100%;
+    	max-height: 30em;
+    }
+
+    .page {
+    	margin: 0 5px;
+    	text-decoration: none;
+    }
+
+    .card-title-base {
+     	height: 50%;
+    } 
+
+    .card-description {
+    	height: 50%;
+    }
+
+    .card-title-base a {
+    	text-decoration: none;
+    	color: black;
+    	font-weight: bolder;
+    	cursor: pointer;
+    }
+
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,17 +277,24 @@
                 <a class="nav-link {% block home %}{% endblock %}" href="/">Trang chủ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% block about %}{% endblock %} " href="">Giới thiệu</a>
+                <a class="nav-link {% block about %}{% endblock %} " href="{% url 'about' %}">Giới thiệu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% block service %}{% endblock %}" href="">Dịch vụ</a>
+                <a class="nav-link {% block service %}{% endblock %}" href="{% url 'service' %}">Dịch vụ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% block contact %}{% endblock %}" href="">Liên hệ</a>
+                <a class="nav-link {% block contact %}{% endblock %}" href="{% url 'contact' %}">Liên hệ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% block menu %}{% endblock %}" href="">Menu</a>
+                <a class="nav-link {% block menu %}{% endblock %}" href="{% url 'menu' %}">Menu</a>
             </li>
+
+            {% if request.user.is_staff %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'manage' %}">Quản lý</a>
+                </li>
+            {% endif %}
+
         </ul>
         <ul class="nav navbar-nav ">
             <li class="nav-item">
@@ -44,17 +302,27 @@
                     <i class="fas fa-search" onclick="openSearch()"></i>
                 </a>
             </li>
+            
+
+            {% if request.user.is_staff %}
             <li class="nav-item">
-                <a class="nav-link" href="">
-                    Đăng nhập
-                </a>
+                <a href="{% url 'profile' %}" class="nav-link">{{ request.user.username}}</a>
             </li>
-            <li style="margin: 5px 5px 0 0;">|</li>
+            {% else %}
             <li class="nav-item">
-                <a class="nav-link " href="">
-                    Đăng ký
-                </a>
+                <a href="{% url 'profile' %}" class="nav-link">{{ request.user.profile.name}}</a>
+                
             </li>
+            {% endif %}
+          
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">
+                  logout
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-reverse-fill" viewBox="0 0 16 16">
+                    <path d="M0 3a2 2 0 0 1 2-2h7.08a2 2 0 0 1 1.519.698l4.843 5.651a1 1 0 0 1 0 1.302L10.6 14.3a2 2 0 0 1-1.52.7H2a2 2 0 0 1-2-2V3zm9.854 2.854a.5.5 0 0 0-.708-.708L7 7.293 4.854 5.146a.5.5 0 1 0-.708.708L6.293 8l-2.147 2.146a.5.5 0 0 0 .708.708L7 8.707l2.146 2.147a.5.5 0 0 0 .708-.708L7.707 8l2.147-2.146z"/>
+                  </svg>
+                </a>
+              </li>
         </ul>
     </div>
     </div>
@@ -105,7 +373,6 @@
         </div>  
         </div>  
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
         <script>
             const data = [
@@ -283,6 +550,9 @@
                 }
             }
         </script>
+        <script src="{% static '/bootstrap/js/bootstrap.js' %}"></script>
+        <script src="{% static '/js/main.js' %}"></script>
+        
     </div>
 </nav>
 

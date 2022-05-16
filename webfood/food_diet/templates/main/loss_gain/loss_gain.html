@@ -1,0 +1,253 @@
+{% extends "users/layouts/main.html" %}
+{% load static %}
+{% block title %}Giảm cân{% endblock %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/lost_gain.css' %} ">
+{% endblock %}
+{% block menu %}active{% endblock %}
+{% block content %}
+<!-- Showcase -->
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1>Giá trị của <span class="text-danger"> Giảm Cân </span></h1>
+                    <p class="lead my-4">
+                        Chúng tôi tập trung về những loại thực phẩm phù hợp với quá trình ăn kiêng đồng thời cung cấp những thực đơn để bạn có thể lựa chọn hợp lý cho khả năng của bản thân.
+                    </p>
+                    <a href="{% url 'login' %}">
+                        <button
+                        class="btn btn-primary btn-lg"
+                    >
+                        Đăng nhập
+                        </button>
+                    </a>
+            </div>
+            <img
+                class="img-fluid w-50 d-none d-md-block"
+                src="{% static '/images/lost_gain(1).jpg' %}"
+                alt=""
+                />
+        </div>
+    </div>
+</section>
+<!--end show case-->
+
+<!-- Information Loss Gain -->
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <h2 class="heading"><span>NGUYÊN TẮC ĂN KIÊNG</span> </h2>
+        <div class="row pt-5">
+            <h2>1. Cắt giảm lượng carbs tinh chế</h2>
+            <div class="col-7 mx-5">
+                <p>Một cách để giảm cân nhanh chóng là cắt giảm lượng đường và tinh bột, hoặc carbohydrate. Khi làm điều đó, mức độ đói của bạn giảm xuống và bạn thường ăn ít calo hơn.</p>
+                <p>Với kế hoạch ăn uống ít carb, bạn sẽ tận dụng việc đốt cháy chất béo dự trữ để lấy năng lượng thay vì carbs. Nếu bạn chọn ăn nhiều carbs phức tạp hơn như ngũ cốc nguyên hạt cùng với sự thâm hụt calo , bạn sẽ được hưởng lợi từ chất xơ cao hơn và tiêu hóa chúng chậm hơn. Điều này làm cho họ cảm thấy no hơn để giữ cho bạn hài lòng.</p>    
+            </div>
+            <div class="col">
+                <img class="img-fluid w-75 d-none d-md-block" src="{% static '/images/carbs.jpg' %}" alt="">
+            </div>
+            <blockquote class="summary bg-light mx-5 pt-2">
+                <h3><strong class="text-danger">Tóm tắt</strong></h3>
+                <p>Giảm lượng đường và tinh bột, hoặc carbs khỏi chế độ ăn uống của bạn có thể giúp hạn chế sự thèm ăn, giảm mức insulin và giúp bạn giảm cân. Nhưng tác động lâu dài của chế độ ăn kiêng ít carb vẫn chưa được biết đến. Chế độ ăn kiêng giảm calo có thể bền vững hơn.</p>
+            </blockquote>
+        </div>
+        <div class="row">
+            <h2>2. Ăn chất đạm, chất béo và rau quả</h2>
+            <div class="col mx-3">
+                <div class="row">
+                    <div class="col-8">
+                        <p>Mỗi bữa ăn của bạn nên gồm: 
+                            <ul>
+                                <li>Protein</li>
+                                <li>Chất béo</li>
+                                <li>Rau</li>
+                                <li>Một phần nhỏ cacbohydrat phức hợp, chẳng hạn như ngũ cốc</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid d-none d-md-block" src="{% static '/images/gain(2).jpg' %}" alt="" width="60%">
+                    </div>
+                </div>
+                <h3>Chất đạm</h3>
+                <div class="mx-3">
+                    <p>Ăn một lượng protein khuyến nghị là cần thiết để giúp duy trì sức khỏe và khối lượng cơ bắp của bạn trong khi giảm cân. Điều này có thể cải thiện các yếu tố nguy cơ về tim, cảm giác thèm ăn và trọng lượng cơ thể.</p>
+                    <p>Chế độ ăn uống với đầy đủ protein cũng có thể giúp:</p>
+                    <ul>
+                        <li>Giảm cảm giác thèm ăn với những suy nghĩ ám ảnh về thức ăn đến 60%</li>
+                        <li>Giảm ham muốn ăn khuya vào ban đêm xuống một nửa</li>
+                        <li>Làm cho bạn cảm thấy no</li>
+                    </ul>
+                    <p><strong>Các nguồn protein lành mạnh bao gồm:</strong></p>
+                    <ul>
+                        <li>
+                            <strong>Thịt:</strong> thịt bò, thị gà, thịt lợn và thịt cừu
+                        </li>
+                        <li>
+                            <strong>Cá và hải sản: </strong>cá hồi và tôm
+                        </li>
+                        <li>
+                            <strong>Trứng:</strong> lòng đỏ
+                        </li>
+                        <li>
+                            <strong>Protein từ thực vật: </strong> các loại đậu, quinoa và đậu phụ
+                        </li>
+                    </ul>
+                </div>
+                <h3>Carb thấp và rau lá xanh</h3>
+                <div class="mx-3">
+                    <p>Chúng chứa nhiều chất dinh dưỡng và bạn có thể ăn một lượng lớn mà không làm tăng nhiều calo và carbs</p>
+                    <p><strong>Các loại rau cần bổ sung cho kế hoạch ăn ít carb hoặc ít calo</strong></p>
+                    <ul>
+                        <li>Bông cải xanh</li>
+                        <li>Súp lơ trắng</li>
+                        <li>Rau bina</li>
+                        <li>Cà chua</li>
+                        <li>Bắp cải</li>
+                        <li>Rau diếp</li>
+                        <li>Quả dưa chuột</li>
+                    </ul>
+                </div>
+                <h3>Chất béo lành mạnh</h3>
+                <div class="mx-3">
+                    Cơ thể vẫn cần chất béo cho dù bạn chọn kế hoạch ăn uống nào. Dầu ô liu và dầu bơ là những lựa chọn tuyệt vời để đưa vào kế hoạch ăn uống của bạn. Các chất béo khác như bơ và dầu dừa chỉ nên được sử dụng vừa phải do hàm lượng chất béo bão hòa cao hơn.
+                </div>
+            </div>
+            <blockquote class="summary bg-light mx-5 my-3">
+                <h3><strong class="text-danger">Tóm tắt</strong></h3>
+                <p>Tập hợp mỗi bữa ăn từ nguồn protein, nguồn chất béo lành mạnh, carb phức hợp và rau. Rau xanh là một các tuyệt vời để bổ sung một bữa ăn với lượng calo thấp và nhiều chất dinh dưỡng.</p>
+            </blockquote>
+        </div>
+        <div class="row">
+            <h2>3. Tập thể dục thường xuyên</h2>
+            <div class="col-7 mx-5">
+                <p>Tập thể dục tuy không cần thiết để giảm cân, nhưng có thể giúp bạn giảm cân nhanh chóng hơn. Nâng tạ có những lợi ích đặc biệt tốt. Bằng cách nâng tạ, bạn sẽ đốt cháy nhiều calo và ngăn quá trình trao đổi chất của bạn chậm lại, một tác dụng hữu ích đối với việc giảm cân.</p>
+                <p>Cố gắng đến phòng tập thể dục ba đến bốn lần trong một tuần để nâng tạ. Nếu bạn mới tập gym, hãy nhờ huấn luyện viên cho một số lời khuyên. Đảm bảo rằng bác sĩ của bạn cũng biết về bất kỳ kế hoạch tập thể dục mới nào.</p>    
+            </div>
+            <div class="col">
+                <img class="img-fluid w-75 d-none d-md-block" src="{% static '/images/excercise.jpg' %}" alt="">
+            </div>
+            <blockquote class="summary bg-light mx-5 pt-2">
+                <h3><strong class="text-danger">Tóm tắt</strong></h3>
+                <p>Tập luyện sức bền, chẳng hạn như cử tạ, là một lựa chọn tuyệt vời để giảm cân. Nếu không thể, các bài tập tim mạch cũng rất hiệu quả.</p>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+
+<section class="blogs" id="blogs">
+
+    <h2 class="heading"><span>Thực đơn</span> </h2>
+
+    <div class="box-container">
+
+        <div class="box text-center">
+            <img src="{% static '/images/blog-1.jpg' %}" alt="">
+            <div class="content">
+                <h3>Chế độ ăn kiêng Low Carb</h3>
+                <p>Mang đến hiệu quả giảm cân, giảm mỡ rõ rệt và tương đối an toàn cho sức khỏe</p>
+                <a href="{% url 'menu' 2 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+        <div class="box text-center">
+            <img src="{% static '/images/blog-2.jpg' %}" alt="">
+            <div class="content">
+                <h3>Chế độ ăn 800 - 1500 calo mỗi ngày</h3>
+                <p>Thực đơn ít calo là một trong những điều đầu tiên mà người tập giảm cân cần lên kế hoạch.</p>
+                <a href="{% url 'menu' 3 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+        <div class="box text-center">
+            <img src="{% static '/images/blog-3.jpg' %}" alt="">
+            <div class="content">
+                <h3>Thực đơn Eat Clean - Giảm cân hiệu quả</h3>
+                <p>Thực đơn áp dụng cho học sinh, sinh viên với chi phí rẻ và dễ dàng chế biến</p>
+                <a href="{% url 'menu' 5 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+        <div class="box text-center">
+            <img src="{% static '/images/blog-4.jpg' %}" alt="">
+            <div class="content">
+                <h3>1000 calo mỗi ngày</h3>
+                <p>Thực đơn ăn kiêng 7 ngày trong tuần giảm cân hiệu quả.</p>
+                <a href="{% url 'menu' 1 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+        <div class="box text-center">
+            <img src="{% static '/images/blog-5.jpg' %}" alt="">
+            <div class="content">
+                <h3>Chế độ giảm cân (nữ)</h3>
+                <p>Thực đơn giảm cân cho nữ hàng ngày ngon miệng.</p>
+                <a href="{% url 'menu' 4 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+        <div class="box text-center">
+            <img src="{% static '/images/blog-6.jpg' %}" alt="">
+            <div class="content">
+                <h3>Giảm cân một cách khoa học</h3>
+                <p>Thực đơn giảm cân 7 ngày "CHUẨN" khoa học</p>
+                <a href="{% url 'menu' 6 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+    
+<section>
+    <h2 class="heading"><span>Kiến thức</span></h2>
+    <div class="row py-2 justify-content-center">
+        <div class="col-md-6 col-12 col-lg-3 mb-4">
+            <div class="border p-3 border-warning">
+            <div class="text-center">
+                <img width="128px"  src="{% static '/images/calo_1000.jpg' %}" alt="">
+            </div>
+            <div class="text-center">
+                <h5 class="text-uppercase py-2">Thực phẩm hạn chế</h5>
+                <p class="">
+                Những loại thực phẩm không nên sử dụng trong quá trình giảm cân.
+                </p>
+                <a href="{% url 'menu' 15 %}"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark">Chi tiết</button></a>
+            </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-12 col-lg-3 mb-4">
+            <div class="border p-3 border-warning">
+            <div class="text-center">
+                <img width="128px" src="{% static '/images/diet.jpg' %}" alt="">
+            </div>
+            <div class="text-center">
+                <h5 class="text-uppercase py-2">Thực phẩm phù hợp</h5>
+                <p class="">
+                Những loại thực phẩm không thể thiếu trong giai đoạn giảm cân.
+                </p>
+                <a href="{% url 'menu' 14 %}"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark">Chi tiết</button></a>
+            </div>
+            </div>
+        </div>
+    
+        <div class="col-md-6 col-12 col-lg-3 mb-4">
+            <div class="border p-3 border-warning">
+                <div class="text-center">
+                    <img width="128px"  src="{% static '/images/diet(2).jpg' %}" alt="">
+                </div>
+                <div class="text-center">
+                <h5 class="text-uppercase py-2">Giảm cân khoa học</h5>
+                <p class="">
+                Những bí quyết giảm cân an toàn và hiệu quả dành cho phụ nữ.
+                </p>
+                <a href="{% url 'menu' 6 %}"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark">Chi tiết</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

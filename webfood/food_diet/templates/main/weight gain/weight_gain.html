@@ -1,0 +1,174 @@
+{% extends "users/layouts/main.html" %}
+{% load static %}
+{% block title %}Tăng cân{% endblock %}
+{% block menu %}active{% endblock %}
+{% block link %} 
+<link rel="icon" type="image/png" href="{% static '/images/icons/favicon.ico' %}" />
+{% endblock %}
+
+
+{% block content %}
+<!-- Showcase -->
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1>Giá trị của <span class="text-danger"> Tăng cân  </span></h1>
+                    <p class="lead my-4">
+                        Bạn đang có một thân hình gầy và bạn muốn tăng cân nhưng không biết tăng cân như nào là hợp lý. Đừng lo chúng tôi đưa ra lời khuyên giúp bạn có bạn kế hoạch tăng cân một cách khoa học.
+                    </p>
+                    <a href="{% url 'login' %}">
+                        <button
+                        class="btn btn-primary btn-lg"
+                    >
+                        Đăng nhập
+                        </button>
+                    </a>
+            </div>
+            <img
+                class="img-fluid w-50 d-none d-md-block"
+                src="{% static '/images/lost_gain(1).jpg' %}"
+                alt=""
+                />
+        </div>
+    </div>
+</section>
+<!--end show case-->
+
+<!-- Information Loss Gain -->
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <div class="block-heading">
+                        <h2 class="display-6 text-center text-primary"><strong>NHỮNG NGUYÊN TẮC TĂNG CÂN HIỆU QUẢ</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <h2 class="text-success"> Bổ sung đầy đủ chất dinh dưỡng cần thiết</h2>
+            <div class="col-7 mx-3">
+                <p> Yếu tố quyết định để tăng cân cho người gầy hiệu quả chính là bổ sung đầy đủ chất dinh dưỡng. Người gầy thường chán ăn, ăn ít nên cơ thể thiếu hụt nhiều chất dinh dưỡng quan trọng. Để tăng cân bạn nên an đa dạng, đảm bảo đủ các nhóm bột đường, đạm, béo, rau và trái cây trong mỗi bữa ăn chính và bổ sung 3 bữa ăn phụ mỗi ngày. Các dưỡng chất cần có trong bữa ăn bao gồm:</p>
+                <p> <i>Chất đạm:</i> Là nguyên liệu xây dựng tế bào, tạo dịch tiêu hóa, nội tiết tố, kháng thể…và cung cấp năng lượng. Thịt, cá, trứng, hải sản, đậu đỗ, sữa là những thực phẩm giàu đạm. Ngoài ra bạn nên thêm các axit amin thiết yếu hay bị thiếu hụt như Lysine giúp ăn ngon miệng, hấp thu tối đa chất dinh dưỡng.</p>    
+                <p> <i>Protein: </i> Bổ sung protein trong các bữa ăn để tăng cường các nhóm cơ giúp tăng cân hiệu quả, không tích mỡ. Trong chuối, trứng, sữa, bông cải xanh, ức gà…là những thực phẩm dồi dào protein mà bạn nên bổ sung vào bữa ăn hàng ngày.</p>
+                <p> <i>Chất béo:</i> Là nguồn cung cấp năng lượng cao, giúp tăng cường dự trữ năng lượng dưới dạng mô mỡ, giúp hấp thu các vitamin tan trong chất béo như vitamin A, D, E, K. Các thực phẩm giúp bổ sung chất béo như sữa, thịt mỡ, dầu, mỡ, bơ, các chất béo không no như Omega3, Omega6.</p>
+                <p> <i>Vitamin và chất khoáng:</i> Nhóm chất dinh dưỡng này thúc đẩy quá trình trao đổi chất trong cơ thể, tăng sức đề kháng, tăng khả năng hấp thu các dưỡng chất khác. Những thực phẩm giàu vitamin và khoáng chất tốt cho sức khỏe như hải sản, trứng, rau xanh, các loại quả. </p>
+                <p> <i>Canxi:</i> Ngoài bổ sung dinh dưỡng thì người gầy cũng cần chú ý bổ sung canxi trong khẩu phần ăn để  ngăn ngừa loãng xương, giúp xương chắc khỏe. Canxi có nhiều trong các loại hải sản, cua đồng, cá nhỏ ăn cả xương, tôm tép nhỏ ăn cả vỏ, đậu nành, rau quả màu xanh đậm và sữa.</p>
+                <p> <i>Chất xơ:</i> Trong rau củ, trái cây có chứa nhiều chất xơ, chất này hỗ trợ tiêu hóa, ngăn ngừa táo bón, tốt cho hệ đường ruột.</p>
+            </div>
+            <div class="col">
+                <img class="img-fluid w-100 d-none d-md-block" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/USDA_Food_Pyramid.gif" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <h2 class="text-success"> Ngủ đủ giấc mỗi ngày</h2>
+            <div class="col mx-3">
+                <p>Ngủ đủ giấc và sâu giấc giúp phục hồi cơ thể và đào thải độc tố , thúc đẩy quá trình trao đổi chất diễn ra nhanh hơn. Ngủ trước 10 giờ và đủ 8 tiếng mỗi ngày kết hợp với chế độ ăn giàu dưỡng chất là “chìa khóa” để tăng cân một cách hiệu quả và nhanh chóng.</p>
+               <div class="d-flex justify-content-center mb-3">
+                <img class="w-50 img-fluid d-none d-md-block" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F38%2F2014%2F10%2F20%2Fshutterstock_420756877.jpg&q=85" alt=""> 
+               </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2 class="text-success">Thường xuyên rèn luyện thể dục, thể thao</h2>
+            <div class="col-7 mx-3">
+                <p>Nếu chỉ bổ sung dinh dưỡng mà không tập thể dục thì sẽ dễ khiến cơ thể trở nên béo phì, thừa mỡ. Một chế độ ăn đầy đủ dưỡng chất kết hợp với các bài tập tăng cân, tăng cơ như chạy bộ, yoga, gym hay bơi lội giúp bạn cải thiện vóc dáng, cân đối hình thể và sớm đạt được cân nặng lý tưởng. Hơn thế, vận động còn giúp giảm stress, rèn luyện sức khỏe, tinh thần sảng khoái.
+                    Cố gắng đến phòng tập thể dục ba đến bốn lần trong một tuần.
+                </p>
+            </div>
+            <div class="col">
+                <img class="img-fluid w-75 d-none d-md-block" src="{% static '/images/excercise.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block">
+                    <div class="block-heading">
+                        <h2 class="display-6 text-center text-primary"><strong>THỰC ĐƠN ĐỀ XUẤT</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://thegioidotap.vn/wp-content/uploads/2020/12/thuc-don-tang-can-cho-nguoi-gay.jpg" class="img-fluid rounded-start " alt="..." style="height: 175px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Thực đơn tăng cân</h5>
+                                <p class="card-text">THỰC ĐƠN TĂNG CÂN CHO NGƯỜI GẦY.</p>
+                                <!-- <button type="button" class="btn btn-info w-100">Tìm hiểu thêm</button> -->
+                                <a href="{% url 'menu' 7 %}" class="btn btn-outline-dark">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="img-fluid rounded-start " alt="..." style="height: 175px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Thực đơn tăng cân</h5>
+                                <p class="card-text">TOP THỰC ĐƠN TĂNG CÂN CHO NGƯỜI GẦY.</p>
+                                <!-- <button type="button" class="btn btn-info w-100">Tìm hiểu thêm</button> -->
+                                <a href="{% url 'menu' 8 %}" class="btn btn-outline-dark">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start " alt="..." style="height: 175px;">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Thực đơn tăng cân</h5>
+                                <p class="card-text">SIÊU THỰC PHẨM TĂNG CÂN CHO NGƯỜI GẦY.</p>
+                                <!-- <button type="button" class="btn btn-info w-100">Tìm hiểu thêm</button> -->
+                                <a href="{% url 'menu' 9 %}" class="btn btn-outline-dark">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start " alt="..." style="height: 175px;">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Thực đơn tăng cân</h5>
+                                <p class="card-text">THỰC ĐƠN BỔ SUNG 3000 CALO </p>
+                                <!-- <button type="button" class="btn btn-info w-100">Tìm hiểu thêm</button> -->
+                                <a href="{% url 'menu' 7 %}" class="btn btn-outline-dark">Chi tiết</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+{% endblock %}
+

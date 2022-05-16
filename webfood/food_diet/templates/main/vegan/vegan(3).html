@@ -1,0 +1,185 @@
+{% extends "users/layouts/main.html" %}
+{% load static %}
+{% block title %}Ăn chay{% endblock %}
+{% block menu %}active{% endblock %}
+{% block content %}
+
+<section class="p-3 p-lg-0 pt-lg-3 text-center text-sm-start">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <div class="block-heading">
+                        <h1 class="text-center text-danger"><strong>THIẾT KẾ THỰC ĐƠN ĂN CHAY ĐÚNG VÀ ĐỦ</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <p>Thực đơn ăn chay trường được thiết kế đúng cách sẽ đáp ứng được nhu cầu, đảm bảo đầy đủ dinh dưỡng và có thể mang lại lợi ích sức khỏe trong việc phòng ngừa và điều trị một số bệnh.</p>
+            <h3 class="text-info text-center">Nguyên tắc lập thực đơn ăn chay trường</h3>
+            <center><img class="img-fluid m-3" src="http://127.0.0.1:8000/static/images/vegan(26).jpg" alt=""></center>
+            <h4><strong>Các nhóm thức ăn và giá trị dinh dưỡng trong thực đơn ăn chay trường</strong></h4>
+            <p>
+                So với chế độ ăn bình thường, thực đơn ăn chay trường giúp tăng cường tiêu thụ nhiều rau củ và trái cây hơn. Đây là nhóm thực phẩm cung cấp dồi dào nguồn vitamin, khoáng chất cho cơ thể. Bên cạnh đó còn cung cấp chất xơ mang lại nhiều lợi ích cho sức khỏe như: hỗ trợ hệ tiêu hóa, giúp cải thiện mức cholesterol và kiểm soát đường huyết sau bữa ăn…
+            </p>
+            <p>
+                Hơn nữa, chính chất xơ trong rau củ và trái cây giúp tạo cảm giác no nhanh hơn, khiến bạn hạn chế lượng thức ăn nạp vào cơ thể và từ có có thể kiểm soát lượng calo dễ dàng hơn. Và đây cũng là nhóm thực phẩm cung cấp mức calo thấp hơn so với các nhóm thực phẩm khác, vì vậy mà bạn có thể ưu tiên mà không cần quá lo ngại về lượng calo. Tuy nhiên , bạn cần lưu ý tiêu thụ vừa phải các loại trái cây, nước ép và trái cây khô có vị ngọt đậm để kiểm soát lượng đường đưa vào cơ thể.
+            </p>
+            <h4><strong>Tinh bột</strong></h4>
+            <p>
+                Tinh bột là nhóm thực phẩm cung cấp năng lượng chủ yếu trong thực đơn ăn chay trường. Chúng cũng cung cấp các chất xơ cần thiết, các khoáng chất canxi, sắt và vitamin B… Có 3 nguồn tinh bột chính: tinh bột tinh chế (bánh mì, mì sợi,…), củ (khoai tây, khoai lang, khoai môn…) và ngũ cốc nguyên hạt (gạo nguyên cám, yến mạch nguyên cám, các loại bánh mì và sợi mì làm từ ngũ cốc nguyên hạt…).
+            </p>
+            <p>
+                Bạn hãy chọn ngũ cốc nguyên hạt làm nguồn tinh bột chủ yếu vì chúng vẫn giữ được các vitamin và khoáng chất cùng hàm lượng chất xơ cao hơn so với các món bánh, mì làm bằng tinh bột tinh chế. Cùng một khối lượng như nhau, tinh bột cung cấp 1/2 năng lượng so với chất béo, do đó thực đơn ăn chay trường lành mạnh nên hạn chế sử dụng nhiều bơ, dầu khi chế biến món ăn.
+            </p>
+            <h4><strong>Sữa thực vật</strong></h4>
+            <p>
+                Sữa từ đậu nành và các loại hạt (hạnh nhân, hạt lanh…) cung cấp lượng protein và vitamin tương đương sữa động vật. Sữa không đường nên được ưu tiên vì tốt cho sức khỏe về lâu dài.
+            </p>
+            <h4><strong>Chất đạm (protein)</strong></h4>
+            <p>
+                Nguồn đạm thay thế thịt động vật đến từ các loại đậu hạt, đậu gà, đậu lăng, hạt, quả hạch, đậu phụ, nấm và một số loại rau củ giàu protein. Nếu thích đa dạng hóa bữa ăn với nguyên liệu chế biến sẵn và được gia tăng hương vị, các loại thực phẩm ‘giả thịt” từ nguồn gốc thực vật giàu đạm luôn sẵn có để bạn lựa chọn. Thực đơn ăn chay trường thay thế thịt bằng các nguồn protein khác giúp người ăn ngăn ngừa gout và các bệnh liên quan đến mỡ máu, cholesterol.
+            </p>
+            <h4><strong>Chất béo</strong></h4>
+            <p>
+                Nhiều loại hạt và dầu thực vật cung cấp các axit béo không bão hòa đơn và không bão hòa đa rất tốt cho sức khỏe. Nguồn axit béo không bão hòa đơn gồm có các loại dầu oliu, dầu hạt cải, dầu đậu phộng, dầu mè, quả bơ, các loại hạt hạnh nhân, đậu phộng, mắc ca, hạt phỉ, hạt hồ đào, hạt điều… Nguồn axit béo bão hòa gồm có hạt hướng dương, hạt mè, hạt bí ngô, hạnh lanh, hạt óc chó, dầu đậu nành, dầu hoa rum (hồng hoa Tây Tạng), sữa đậu nành và đậu phụ,…
+            </p>
+            <h4 class="text-danger">Lưu ý</h4>
+            <p>Không phải tất cả các thực phẩm ăn chay đều chỉ chứa chất béo an toàn. Bản thân dầu dừa và dầu cọ là các axit béo bão hòa – nên được giới hạn trong mức 10% trên tổng lượng calo một ngày. Các loại mì và bánh được chế biến công nghiệp như bánh quy, bánh vòng, bánh bông lan, vỏ bánh pizza, bánh snack, khoai tây chiên… bơ magarine, các loại shortening thực vật và các loại thực phẩm chứa dầu được hydro hóa đều chứa nhiều transfat – chất béo chuyển hóa, làm tăng cholesterol xấu (LDL cholesterol) và giảm cholesterol tốt (HDL cholesterol) trong cơ thể chúng ta.</p>
+            <h3 class="text-info text-center">Các nhóm chất dễ bị thiếu hụt trong thực đơn ăn chay trường</h3>
+            <p>Một thực đơn ăn chay trường càng nghiêm ngặt càng đòi hỏi sự chú ý vào việc đảm bảo dinh dưỡng. Người ăn chay trường cần chú ý để không bị thiếu hụt các chất sau đây:</p>
+            <div class="mx-3">
+                <h4><strong>Canxi và vitamin D</strong></h4>
+                <p>
+                    Để thay thế canxi và vitamin D có trong sữa động vật và trứng, thực đơn ăn chay trường cần có các loại rau ăn lá có màu xanh đậm như cải bó xôi, cải cầu vồng, bông cải xanh, cải thìa, rau ngót, đậu ve Nhật, đậu nành và các sản phẩm từ đậu nành… Người ăn chay trường nên sử dụng thêm các loại sữa đậu và ngũ cốc được tăng cường canxi và vitamin D.
+                </p>
+                <h4><strong>Vitamin B12</strong></h4>
+                <p>
+                    Vitamin B12 chỉ có trong các sản phẩm từ động vật. Vitamin này rất thiết yếu cho việc hình thành tế bào hồng cầu của máu và ngăn ngừa bệnh thiếu máu. Những người theo thực đơn ăn chay trường không ăn trứng và sữa mà vitamin này hầu như chỉ tìm thấy trong các sản phẩm có nguồn gốc động vật vì vậy cần bổ sung vitamin B12 bằng đường uống, ngũ cốc giàu vitamin…
+                </p>
+                <h4><strong>Protein</strong></h4>
+                <p>
+                    Nguồn protein cho người ăn chay trường chọn lựa không hề thiếu, nhưng hàm lượng protein trong thực vật thấp hơn nhiều so với động vật. Để đảm bảo cung cấp đủ protein, thực đơn ăn chay trường cần đầy đủ và phong phú các loại đậu gà, đậu lăng, hạt, quả hạch, các sản phẩm từ đậu nành, ngũ cốc nguyên hạt…
+                </p>
+                <h4><strong>Axit béo omega-3</strong></h4>
+                <p>
+                    Axit béo omega-3 rất cần thiết cho sức khỏe tim mạch. Thực đơn ăn chay trường không có cá và trứng thường chứa ít axit béo omega-3 ở dạng hoạt động. Dầu cải, dầu nành, hạt óc chó, hạt lanh, hạt đậu nành là nguồn cung cấp các axit béo cần thiết cho cơ thể. Tuy nhiên, cơ thể thường không hấp thu hiệu quả axit béo omega-3 nguồn gốc thực vật, bạn nên cân nhắc bổ sung thêm omega-3 bằng đường uống.
+                </p>
+                <h4><strong>Sắt và kẽm</strong></h4>
+                <p>
+                    Trong khi sắt là thành phần quan trọng của tế bào hồng cầu trong máu, kẽm lại tham gia vào việc hình thành nhiều enzyme, protein cơ thể và phát triển hệ miễn dịch. Nguồn sắt chủ yếu trong thực đơn ăn chay trường đến từ họ nhà đậu đã khô hạt, ngũ cốc nguyên hạt, các loại rau lá xanh thẫm và hoa quả sấy khô. Nguồn kẽm đến từ các loại đậu, đậu nành, mầm lúa mì, ngũ cốc nguyên hạt.
+                </p>
+                <p>
+                    Cơ thể hấp thu sắt và kẽm từ thực vật chỉ ở chừng mực nào đó nên người ăn chay trường cần bổ sung thêm qua đường uống. Kết hợp với thực phẩm giàu vitamin C như ổi, kiwi, dâu tây, quả có múi, bông cải xanh… khi ăn các thức ăn chứa sắt sẽ giúp việc hấp thu sắt được hiệu quả hơn.
+                </p>
+                <h4><strong>I-ốt</strong></h4>
+                <p>
+                    I-ốt là thành phần thiết yếu của hormone tuyến giáp, là hormone giúp điều hòa sự trao đổi chất, quá trình tăng trưởng và hoạt động chức năng của các cơ quan trong cơ thể. I ốt rất quan trọng với phụ nữ mang thai và trẻ nhỏ. I-ốt có nhiều trong các loại tảo biển, hải sản. 1/4 muỗng cà phê muối i-ốt mỗi ngày sẽ giúp bổ sung tốt i-ốt cho cơ thể.
+                </p>
+            </div>
+            <h3 class="text-info text-center">Lập thực đơn ăn chay trường</h3>
+            <center><img class="img-fluid m-3" src="http://127.0.0.1:8000/static/images/vegan(27).jpg" alt=""></center>
+            <p>
+                Người ăn chay cần biết mục tiêu cung cấp năng lượng và chất dinh dưỡng của mỗi thời điểm ăn trong ngày. Với 3 bữa chính một ngày, mỗi bữa ăn đều cần có đầy đủ các thành phần rau và trái cây, tinh bột, đạm, chất béo, các vitamin và khoáng chất.
+            </p>
+            <div class="mx-3">
+                <h4><strong>Bữa sáng</strong></h4>
+                <p>
+                    Bữa sáng đầy đủ là nút bật cho hoạt động trao đổi chất diễn ra mạnh mẽ xuyên suốt trong ngày. Bữa sáng hợp lý giúp người theo thực đơn ăn chay trường phát huy sự tập trung và trí nhớ, đảm bảo lượng rau quả và chất xơ được ăn vào trong một ngày. Tinh bột và chất béo trong bữa ăn sáng nên được giới hạn ở mức vừa đủ để khởi động một ngày, tránh gây cảm giác nặng nề sau khi ăn.
+                </p>
+                <h4><strong>Bữa trưa và bữa tối</strong></h4>
+                <p>
+                    Đừng đưa các món ăn đóng hộp vào trong thực đơn của mình vì chúng không tốt cho sức khỏe của bạn. Ăn trưa xong bạn có một ít thời gian nghỉ ngơi, nên đừng ngần ngại ăn đầy đủ và thoải mái. Hãy nhớ luôn cân bằng các thành phần dinh dưỡng trong thực đơn ăn chay trường như hướng dẫn bên trên. Hãy ăn những món bạn thích ăn được chuẩn bị một cách chu đáo vào bữa tối, tránh các món ăn khó tiêu gây ảnh hưởng giấc ngủ.
+                </p>
+                <h4><strong>Thực đơn ăn chay trường tham khảo cho một tuần</strong></h4>
+                <p><strong>Thứ hai:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: bánh mì từ ngũ cốc nguyên hạt phết bơ đậu phộng, trái cây xay
+                    </li>
+                    <li>
+                        Trưa: tàu hũ ky xào nấm; nấm đùi gà hấp cải xanh
+                    </li>
+                    <li>
+                        Tối: canh bóng cuộn bí ngòi, salad đậu hũ chiên
+                    </li>
+                </ul>
+                <p><strong>Thứ ba:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: ngũ cốc ăn sáng giàu chất xơ, trái cây, sữa gạo
+                    </li>
+                    <li>
+                        Trưa: canh bông cải nấm rơm; cà tím kho đậu phụ
+                    </li>
+                    <li>
+                        Tối: cơm gạo lứt hạt sen; canh bạch quả bí đỏ
+                    </li>
+                </ul>
+                <p><strong>Thứ tư:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: đậu phụ xào rau củ, sữa đậu nành
+                    </li>
+                    <li>
+                        Trưa: canh rong biển hạt sen; mít non om chao đỏ
+                    </li>
+                    <li>
+                        Tối: súp đậu đỏ, váng đậu cuộn rau củ chiên
+                    </li>
+                </ul>
+                <p><strong>Thứ năm:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: cháo nấm yến mạch, trái cây
+                    </li>
+                    <li>
+                        Trưa: cải ngồng xào nấm; cà tím luộc sốt tương chay
+                    </li>
+                    <li>
+                        Tối: canh rong biển đậu phụ; bắp cải kho chay
+                    </li>
+                </ul>
+                <p><strong>Thứ sáu:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: sushi đậu phụ; nước ép cần tây, dứa, dưa chuột
+                    </li>
+                    <li>
+                        Trưa: canh nấm đông cô, cà rốt và đậu hà lan; nem rán chay
+                    </li>
+                    <li>
+                        Tối: nấm rơm kho tộ; súp bí đỏ
+                    </li>
+                </ul>
+                <p><strong>Thứ bảy:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: miến xào chay thập cẩm
+                    </li>
+                    <li>
+                        Trưa: đậu phụ non sốt nấm; gỏi đu đủ chay
+                    </li>
+                    <li>
+                        Tối: lẩu nấm tiềm củ quả; rau củ kho chay
+                    </li>
+                </ul>
+                <p><strong>Chủ nhật:</strong></p>
+                <ul>
+                    <li>
+                        Sáng: hủ tiếu chay
+                    </li>
+                    <li>
+                        Trưa: đậu phụ cay sốt Tứ Xuyên; măng kho xì dầu
+                    </li>
+                    <li>
+                        Tối: canh chua chay; đậu phụ xào rau củ
+                    </li>
+                </ul>
+                <p>Lên thực đơn ăn chay trường đòi hỏi người ăn chay ăn càng nhiều loại thức ăn khác nhau càng tốt. Theo đuổi điều này sẽ trở thành một hành trình thú vị, một cơ hội để người ăn chay trường khám phá thế giới thực vật bao la mà thực phẩm nào cũng có thể trở thành một món ăn ngon và bổ dưỡng.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

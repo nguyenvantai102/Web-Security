@@ -1,0 +1,102 @@
+{% extends "users/layouts/main.html" %}
+{% load static %}
+{% block title %}Kiến thức{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static '/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/lost_gain.css' %} ">
+{% endblock %}
+{% block menu %}active{% endblock %}
+{% block content %}
+<!-- Showcase -->
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-center">
+            <div>
+                <h1><span class="text-danger"> Kiến thức </span></h1>
+                    <p class="lead my-4">
+                        Nắm bắt các loại thực phẩm khoa học sẽ giúp bữa ăn của bạn sẽ đảm bảo hơn. Chúng tôi sẽ cung cấp cho bạn những hiểu biết và một số thông tin thực đơn dành cho các đối tượng muốn tối ưu bữa ăn của mình.
+                    </p>
+                    <a href="{% url 'login' %}">
+                    <button
+                    class="btn btn-primary btn-lg"
+                >
+                    Đăng nhập
+                    </button>
+                </a>
+            </div>
+            <img
+                class="img-fluid w-50 d-none d-sm-block"
+                src="{% static '/images/other(3).jpg' %}"
+                alt=""
+                />
+        </div>
+    </div>
+</section>
+<!--end show case-->
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <h2 class="heading"><span>AN TOÀN THỰC PHẨM</span> </h2>
+        <p>Ai trong số chúng ta cũng cần có một cuộc sống lành mạnh và những bữa cơm ngon cùng gia đình. Nhưng điều đó đang ngày càng bị đe dọa bởi những thực phẩm bẩn đang tràn lan trên thị trường. </p>
+        <center><img class="img-fluid mb-3" src="{% static '/images/other(4).jpg' %}" alt=""></center>
+        <p>Theo khái niệm mà các nhà khoa học đã đưa ra thì thực phẩm là những loại thức ăn mà con người có thể ăn và uống được để nuôi dưỡng cơ thể. Thực phẩm gồm ba nhóm chính đó là nhóm cacbohydrat ( tinh bột ), lipit ( chất béo ), protein (chất đạm). Đây là những dưỡng chất không thể thiếu để duy trì các hoạt động sống của cơ thể.</p>
+        <p>Nhiều nơi phân loại thực phẩm theo nguồn gốc của chúng như thực phẩm có nguồn gốc động vật, thực phẩm có nguồn gốc thực vật. Đối với thực phẩm có nguồn gốc động vật lại được chia thành trên cạn, dưới nước và trên trời. Thực phẩm có nguồn gốc thực vật thì được chia thành rau, củ, quả, hạt, gia vị.</p>
+        <center><img class="img-fluid mb-3" src="{% static '/images/other(5).gif' %}" alt=""></center>
+        <p>Các thực phẩm được phân chia vào chung nhóm sẽ có nguồn dưỡng chất phần lớn là giống nhau. Ví dụ ở nhóm sữa và chế phẩm từ sữa ( bơ, pho mát..) sẽ cung cấp chủ yếu canxi và protein cho cơ thể. còn nhóm rau củ trái cây lại chứa nguồn vitamin dồi dào đặc biệt là vitamin C tốt cho sức đề kháng của cơ thể. Một chế độ dinh dưỡng hợp lý được cân bằng với 5 nhóm thực phẩm chính luôn là bài toán khó cho mỗi bữa ăn của chúng ta. Mỗi thực phẩm là sự đan xen các dinh dưỡng khác nhau và chất nào cũng đều quan trọng và có ích cho sức khỏe. Do vậy, dưới sự phân chia dựa trên thành phần dinh dưỡng chủ lực của thực phẩm theo 5 nhóm chính, bạn sẽ có thể tạo ra nhiều lựa chọn khác nhau. Mối bữa, bạn ăn nhiều loại thức ăn thì cơ thể sẽ có cảm giác ngon miệng và tăng khả năng trao đổi chất tốt hơn.</p>
+        <center><img class="img-fluid mb-3" src="{% static '/images/other(6).jpg' %}" alt=""></center>
+        <h2 class="heading"><span>KIẾN THỨC THỰC PHẨM</span></h2>
+        <div class="content">
+            <div class="card card-one" style="width: 18rem;">
+                <img src="{% static '/images/other(7).jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Những loại thực phẩm giúp cải thiện chiều cao</p>
+                    <a href="{% url 'menu' 11 %}" class="btn btn-warning">Click ngay</a>
+                </div>
+            </div>
+            <div class="card card-two" style="width: 18rem;">
+                <img src="{% static '/images/other(8).gif' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Những loại thực phẩm tốt cho sức khỏe giá rẻ</p>
+                    <a href="{% url 'menu' 12 %}" class="btn btn-info">Click ngay</a>
+                </div>
+            </div>
+            <div class="card card-three" style="width: 18rem;">
+                <img src="{% static '/images/other(9).jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Những loại trái cây cần bổ sung cho cơ thể</p>
+                    <a href="{% url 'menu' 13 %}" class="btn btn-success">Click ngay</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card card-three" style="width: 18rem;">
+                <img src="{% static '/images/other(10).jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Những thực phẩm cần bổ sung cho sự phát triển của trẻ em</p>
+                    <a href="{% url 'menu' 16 %}" class="btn btn-success">Click ngay</a>
+                </div>
+            </div>
+            <div class="card card-one" style="width: 18rem;">
+                <img src="{% static '/images/other(11).jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Thực phẩm giảm cân hiệu quả cho cơ thể</p>
+                    <a href="{% url 'menu' 14 %}" class="btn btn-warning">Click ngay</a>
+                </div>
+            </div>
+            <div class="card card-two" style="width: 18rem;">
+                <img src="{% static '/images/other(12).jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Những loại thực phẩm hạn chế hấp thu</p>
+                    <a href="{% url 'menu' 15 %}" class="btn btn-info">Click ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

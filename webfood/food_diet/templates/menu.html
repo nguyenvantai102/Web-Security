@@ -1,0 +1,554 @@
+{% extends "users/templates/users/layouts/main.html" %}
+{% load static %}
+{% block title %}Thực đơn{% endblock %}
+{% block link %} 
+<link rel="icon" type="image/png" href="{% static '/images/icons/logo.ico' %}" />
+{% endblock %}
+{% block menu %}active{% endblock %}
+{% block content %}
+    <!--Content-->
+    <!-- main image & intro text -->
+<section id="intro">
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5 text-center text-md-start">
+                <h1>
+                    <div class="display-3 shadow-lg border-dark text-center fw-bold bg-light">THỰC ĐƠN</div>
+                </h1>
+                <p class="lead my-4 text-muted">Để có một cơ thể phát triển khỏe mạnh thì chúng ta cần có những thực đơn phù hợp với yêu cầu của cơ thể. Chúng tôi sẽ cung cấp cho bạn những thông tin cần thiết để bạn có thể lựa chọn một lối ăn uống khoa học và hiệu quả.</p>
+            </div>
+            <div class="col-md-5 text-center d-none d-md-block">
+                <img class="img-fluid" src="{% static '/images/slider3.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="food" class="bg-light mt-5">
+    <div class="container-lg">
+        <div class="text-center">
+            <h2>TIÊU BIỂU</h2>
+        </div>
+        <div class="row my-5 align-items-center justify-content-center">
+            <div class="col-8 col-lg-4 col-xl-3">
+                <a href="{% url 'menu' 7 %}">
+                    <div class="card border-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Tăng cân</h4>
+                            <p class="lead card-subtitle">Tăng cân nhanh chóng cho người gầy</p>
+                            <img src="{% static '/images/weight-gain.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-9 col-lg-4">
+                <div class="card border-primary border-2">
+                    <a href="{% url 'menu' 2 %}">
+                        <div class="card-header text-center text-primary">Phổ biến nhất
+                            <div class="card-body text-center py-5">
+                                <h4 class="card-title">Giảm cân</h4>
+                                <p class="lead card-subtitle">Giảm cân hiệu quả trong vòng 1 tuần</p>
+                                <img class="img-fluid" src="{% static '/images/slow_height.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-8 col-lg-4 col-xl-3">
+                <div class="card border-0">
+                    <a href="{% url 'menu' 18 %}">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Ăn chay</h4>
+                            <p class="lead card-subtitle">Giúp cơ thể khỏe mạnh và giảm cân an toàn</p>
+                            <img src="{% static '/images/diet.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--calories-->
+<section id="calories">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md">
+          <img src="{% static '/images/calories.jpg' %}" class="img-fluid" alt="" />
+        </div>
+        <div class="col-md p-5">
+          <h2>Tìm hiểu về calo</h2>
+          <p class="lead">
+            Calo là mức năng lượng nhận được khi cơ thể bạn tiếp nhận những thực phẩm và đồ uống. Tùy vào mỗi cơ thể mà mỗi người có một mức độ tiếp nhận calo khác nhau.
+          </p>
+          <p>
+            Tuổi tác, giới tính và mức độ hoạt động của bạn là ba yếu tố chính để tìm ra lượng calo bạn nên hấp thụ mỗi ngày. Bạn càng hoạt động nhiều, bạn càng cần nhiều calo mỗi ngày để duy trì cân nặng. Tùy thuộc vào mức độ hoạt động, sự trao đổi chất trong cơ thể mà mỗi người có một mức calo khác nhau. Chúng tôi đề xuất những thực đơn phù hợp với từng mức độ calo phù hợp với yêu cầu của mỗi người.
+          </p>
+          <a href="{% url 'menu' 10 %}" class="btn btn-primary mt-1">
+            <i class="bi bi-chevron-right border-dark"></i> Đọc thêm
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--end calories-->
+
+    <!-- Infor calories each people -->
+<section id="info_calories" class="p-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4 display-6">Thông tin lượng calo cần thiết</h2>
+      <div class="accordion accordion-flush" id="questions">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#question-one"
+            >
+              
+              Bao nhiêu calo là đủ?
+            </button>
+          </h2>
+          <div
+            id="question-one"
+            class="accordion-collapse collapse"
+            data-bs-parent="#questions"
+          >
+            <div class="accordion-body">
+                Tùy thuộc vào vào nhiều yếu tố như chiều cao, cân nặng, tình trạng sức khỏe, tính chất công việc ... mà nhu cầu calo của mỗi người khác nhau.
+                Chúng tôi cung cấp một bảng nhu cầu calo chung nhất:
+                <table class="table table-dark table-hover text-center">
+                  <thread>
+                      <tr>
+                          <th scope="col">Độ tuổi</th>
+                          <th scope="col">Giới tính</th>
+                          <th scope="col">Mức độ hoạt động</th>
+                          <th scope="col">Lượng calo/ngày</th>
+                      </tr>
+                  </thread>
+                  <tbody>
+                      <tr>
+                        <th scope="row">19 - 30</th>
+                        <td>Nữ</td>
+                        <td>Cao</td>
+                        <td>2.000 - 2.400 calo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">31 - 59</th>
+                        <td>Nữ</td>
+                        <td>Bình thường</td>
+                        <td>1.800 - 2.200 calo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">60+</th>
+                        <td>Nữ</td>
+                        <td>Thấp</td>
+                        <td>1.600 - 2.000 calo</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">19 - 30</th>
+                          <td>Nam</td>
+                          <td>Cao</td>
+                          <td>2.400 - 3.000 calo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">31 - 59</th>
+                          <td>Nam</td>
+                          <td>Bình thường</td>
+                          <td>2.200 - 3.000 calo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">60+</th>
+                          <td>Nam</td>
+                          <td>Thấp</td>
+                          <td>2000 - 2.600 calo</td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+              
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#question-two"
+            >
+            Làm thế nào để giảm cân an toàn?
+            </button>
+          </h2>
+          <div
+            id="question-two"
+            class="accordion-collapse collapse"
+            data-bs-parent="#questions"
+          >
+            <div class="accordion-body">
+                Khi cố gắng giảm cân, nguyên tắc chung là làm giảm lượng calo của bạn xuống còn 500 calo ít hơn so với cơ thể bạn cần để duy trì cân nặng hiện tại của bạn. Làm như vậy có thể giúp bạn giảm khoảng 1 pound (0,45 kg) trọng lượng cơ thể mỗi tuần.
+                Tuy nhiên, điều quan trọng là phải đảm bảo rằng bạn đang đủ calo để cung cấp cho cơ thể các chất dinh dưỡng cần thiết, ngay cả khi bạn đang cố gắng giảm cân.
+                <br>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <div class="block-heading">
+                                <h3>5 Chiến lược giảm cân đơn giản</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                  <!---------------------------->
+                  <p>
+                    <a class="btn btn-light mx-4 border-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ăn nhiều protein</a>
+                    <button class="btn btn-light mx-4 border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Hạn chế đồ uống có đường</button>
+                    <button class="btn btn-light mx-4 border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Uống nhiều nước</button>
+                    <button class="btn btn-light mx-4 border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Tập thể dục</button>
+                    <button class="btn btn-light mx-4 border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">Giảm lượng carbs tinh chế</button>
+                    <button class="btn btn-light mx-4 border-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2 multiCollapseExample3">Đóng</button>
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body border-warning">
+                          Tăng lượng protein của bạn có thể giúp bạn hài lòng và tiêu thụ ít calo hơn. Điều này có thể giúp bạn giảm cân hiệu quả.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body border-warning">
+                          Đồ uống có đường có hàm lượng calo cao, ngoài ra chúng ảnh hưởng đến cơn đói và cảm giác no của bạn khiến bạn có nguy cơ béo phì cao hơn.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body border-warning">
+                            Một số nghiên cứu chỉ ra rằng uống nước có thể cải thiện sức khỏe của bạn và giúp bạn ăn ít calo hơn bằng cách tăng cảm giác no.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample4">
+                          <div class="card card-body border-warning">
+                            Tập luyện sức đề kháng có thể giúp ngăn ngừa mất cơ bắp và giữ cho sự trao đổi chất của bạn không chậm lại khi cắt giảm calo.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample5">
+                          <div class="card card-body border-warning">
+                            Carbs tinh chế có ít chất sơ, có thể giúp điều chỉnh sự thèm ăn của bạn và tăng cảm giác no. Chọn carbs phức tạp hơn và các lựa chọn giàu dinh dưỡng như ngũ cốc nguyên hạt, rau, trái cây và các loại đậu.
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#question-three"
+            >
+            Làm thế nào để tăng cân nhanh và an toàn?
+            </button>
+          </h2>
+          <div
+            id="question-three"
+            class="accordion-collapse collapse"
+            data-bs-parent="#questions"
+          >
+            <div class="accordion-body">
+              <strong>Tăng cân lành mạnh</strong>
+              <p class="text-danger mx-2">Điều rất quan trọng là bạn phải ăn chủ yếu các loại thực phẩm lành mạnh ngay cả khi bạn đang cố gắng tăng cân.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#question-four"
+            >
+              Ăn chay có lợi ích gì?
+            </button>
+          </h2>
+          <div
+            id="question-four"
+            class="accordion-collapse collapse"
+            data-bs-parent="#questions"
+          >
+            <div class="accordion-body">
+              Việc ăn chay trường theo nhiều người là tích phước, công đức cho gia đình. Tuy là một điều phước thiện, nhưng nếu không biết cách ăn chay mà vẫn đảm bảo đầy đủ dưỡng chất thì sẽ ảnh hưởng đến sức khoẻ rất nhiều. Ăn chay trường đúng cách an toàn cho sức khoẻ.
+            </div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#question-five"
+            >
+              Kiến thức hữu ích
+            </button>
+          </h2>
+          <div
+            id="question-five"
+            class="accordion-collapse collapse"
+            data-bs-parent="#questions"
+          >
+            <div class="accordion-body">
+              <p>Theo khái niệm mà các nhà khoa học đã đưa ra thì thực phẩm là những loại thức ăn mà con người có thể ăn và uống được để nuôi dưỡng cơ thể. Thực phẩm gồm ba nhóm chính đó là nhóm cacbohydrat ( tinh bột ), lipit ( chất béo ), protein (chất đạm). Đây là những dưỡng chất không thể thiếu để duy trì các hoạt động sống của cơ thể.</p>
+              <p>Nhiều nơi phân loại thực phẩm theo nguồn gốc của chúng như thực phẩm có nguồn gốc động vật, thực phẩm có nguồn gốc thực vật. Đối với thực phẩm có nguồn gốc động vật lại được chia thành trên cạn, dưới nước và trên trời. Thực phẩm có nguồn gốc thực vật thì được chia thành rau, củ, quả, hạt, gia vị.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boxes -->
+<section id="menu">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <div class="block-heading">
+                    <h2 class="display-6">NHỮNG THỰC ĐƠN ĐỀ XUẤT</h2>
+                    <p>Chúng tôi cung cấp những thực đơn theo những mục tiêu khác nhau</p>
+                </div>
+            </div>
+        </div>
+      <div class="col-md-12 mt-3">
+        <div class="products-heading">
+          <h2 class="text-primary">PHỔ BIẾN</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card bg-light border-info text-dark">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <h3 class="card-title mb-3 ">GIẢM CÂN</h3>
+            <p class="card-text">
+              Giúp bạn trong việc lựa chọn những thực đơn giảm cân hiệu quả
+            </p>
+            <a href="{% url 'lossgain' %}" class="btn btn-primary">Đọc thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-light border-info text-dark">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-person-square"></i>
+            </div>
+            <h3 class="card-title mb-3">TĂNG CÂN</h3>
+            <p class="card-text">
+              Những phương pháp tăng cân nhanh và an toàn, phù hợp với từng lứa tuổi.
+            </p>
+            <a href="{% url 'weightgain' %}" class="btn btn-primary">Đọc thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-light border-info text-dark">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3 class="card-title mb-3">ĂN CHAY</h3>
+            <p class="card-text">
+              Những thực đơn ăn chay đảm bảo được lượng dinh dưỡng hấp thụ.
+            </p>
+            <a href="{% url 'vegan' %}" class="btn btn-primary">Đọc thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-light border-info text-dark">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3 class="card-title mb-3">KIẾN THỨC</h3>
+            <p class="card-text">
+              Những kiến thức về các loại thực phẩm có thể hỗ trợ cho bạn.
+            </p>
+            <a href="{% url 'other' %}" class="btn btn-primary">Đọc thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="service" class="bg-light container-fluid mt-3" >
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="display-6 "><b><strong>TIÊU BIỂU</strong></b></h2>
+        <p class="">Các bài viết tiêu biểu đối với từng nhu cầu</p>
+      </div>
+
+      <div class="col-12 text-center">
+        <img  src="{% static '/images/star.png' %}" alt="star">
+        <img  src="{% static '/images/star.png' %}" alt="star">
+        <img  src="{% static '/images/star.png' %}" alt="star">
+        <img  src="{% static '/images/star.png' %}" alt="star">
+        <img  src="{% static '/images/star.png' %}" alt="star">
+      </div>
+    </div>
+
+    <div class="row py-5">
+
+      <div class="col-md-6 col-12 col-lg-3 mb-4">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/calo_1000.jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">1000 calo mỗi ngày</h5>
+            <p class="">
+              Thực đơn ăn kiêng 7 ngày trong tuần giảm cân hiệu quả.
+            </p>
+            <a href="{% url 'menu' 1 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-12 col-lg-3 mb-4">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px" src="{% static '/images/diet.jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Chế độ giảm cân (nữ)</h5>
+            <p class="">
+              Thực đơn giảm cân cho nữ hàng ngày dễ thực hiện.
+            </p>
+            <a href="{% url 'menu' 4 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 col-lg-3 mb-4">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/diet(2).jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Thực phẩm khoa học</h5>
+            <p class="">
+              Tìm hiểu lượng calo có trong thực phẩm hằng ngày.
+            </p>
+            <a href="{% url 'menu' 10 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 col-lg-3 mb-4">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/gain(1).png' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Bổ sung 3000 calories</h5>
+            <p class="">
+              Thực đơn tăng cân cho nam đơn giản hiệu quả.
+            </p>
+            <a href="{% url 'menu' 8 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/taller.jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Tăng chiều cao</h5>
+            <p class="">
+              Những thực phẩm có thể giúp bạn cao hơn.
+            </p>
+            <a href="{% url 'menu' 11 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/vegan.jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Ăn chay phù hợp</h5>
+            <p class="">
+              Thực đơn ăn chay đủ chất dinh dưỡng cho người bận rộn.
+            </p>
+            <a href="{% url 'menu' 18 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/diet(3).jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Vóc dáng hoàn hảo</h5>
+            <p class="">
+              Thực đơn ăn kiêng healthy giúp chị em eo thon, dáng gọn.
+            </p>
+            <a href="{% url 'menu' 4 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 col-lg-3 mb-4 mb-lg-0">
+        <div class="border p-3">
+          <div class="text-center">
+            <img width="128px"  src="{% static '/images/diet(4).jpg' %}" alt="">
+          </div>
+          <div class="text-center">
+            <h5 class="text-uppercase py-2">Tiêu tan mỡ bụng</h5>
+            <p class="">
+              Thực đơn giảm cân cho nam trong 1 tuần.
+            </p>
+            <a href="{% url 'menu' 5 %}" class="btn btn-outline-dark">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+        
+      
+    </div>
+  </div>
+</section>
+
+    <!--End content-->
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "users/templates/users/layouts/main.html" %}
+{% load static %}
+{% block title %}Add Question{% endblock %}
+
+{% block link %}
+<!-- add block css file -->
+<link rel="stylesheet" href="{% static '/css/form_quiz.css' %}">
+<!-- {% block about %}active{% endblock %} -->
+{% endblock %}
+
+{% block content %}
+<section class="section form-quiz">
+    <div class="container wrap-add">
+        <div class="login-box">
+            <h2>Add Question</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br>
+                <input type="submit" class="sub-add" name="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+ 
+{% endblock %}
+
+{% block event %}
+
+{% endblock %}
+
+

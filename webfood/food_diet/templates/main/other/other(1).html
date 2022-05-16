@@ -1,0 +1,346 @@
+{% extends "users/layouts/main.html" %}
+{% load static %}
+{% block title %}Calo{% endblock %}
+{% block menu %}active{% endblock %}
+{% block content %}
+
+
+<section class="p-3 p-lg-0 pt-lg-3 text-center text-sm-start">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <div class="block-heading">
+                        <h1 class="text-center text-danger"><strong>LƯỢNG CALO TRONG MỖI LOẠI THỰC PHẨM</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h3 class="text-success"><b>1. Tìm hiểu về calo</b></h3>
+            <div class="mx-3">
+                <h4 class="text-danger"><b>1.1 Calo là gì? Calo tốt hay xấu?</b></h4>
+                <center><img class="mt-2 img-fluid" src="http://127.0.0.1:8000/static/images/other(1).jpg" alt=""></center>
+                <p>Calo là một đơn vị đo lường mức năng lượng. Bạn có thể gặp một số khái niệm khác liên quan đến calo như kcal, calories,… Tất cả chúng đều biểu thị 1 đơn vị đo lường duy nhất. Calo ban đầu được định nghĩa là nhiệt lượng cần thiết để tăng nhiệt độ của 1 gram nước thêm 1 độ C. Tuy nhiên calo được sử dụng phổ biến hơn cả khi gắn liền với thực phẩm. Gần như mọi loại thực phẩm chúng ta ăn đều mang lại ít nhiều calories. Mọi thứ chúng ta làm, mọi hoạt động trong cơ thể đều cần được duy trì bằng năng lượng dưới dạng calo, dù chỉ là ngồi yên trên ghế hay hàng giờ chạy marathon.</p>
+                <p>
+                    Calo không chỉ là mức đo năng lượng của thực phẩm. Khái niệm này còn được mở rộng hơn nữa khi chỉ mức độ cân bằng dinh dưỡng. Cụ thể, một món ăn giàu calo tốt khi chúng có chứa nhiều dinh dưỡng cơ thể cần như vitamin khoáng, protein, chất xơ,… Ngược lại, những món ăn kém cân bằng dinh dưỡng. chứa nhiều chất có hại như dầu mỡ, chất béo công nghiệp lại được đánh giá là calo rỗng, mặc dù mức calo thực tế trong các món này rất cao.
+                </p>
+                <p>
+                    Calo không hề xấu. Chúng mang lại năng lượng cho cơ thể, phục vụ các hoạt động thể chất và tinh thần. Tuy nhiên cách nạp calo của chúng ta có thể khiến calo trở nên có hại. Hai trường hợp điển hình là thường xuyên nạp calo rỗng và nạp thừa quá nhiều calo so với nhu cầu cơ thể.
+                </p>
+                <h4 class="text-danger"><b>1.2 Mối quan hệ giữa calo và cân nặng</b></h4>
+                <p>
+                    Calo trong thức ăn cung cấp năng lượng cần thiết. Nhưng nếu bạn tiêu thụ quá nhiều, gây thừa calo thì bạn tăng cân là điều dễ hiểu. Lượng calo dư thừa này được lưu trữ dưới dạng mỡ ở trong cơ thể. Ở một mức giới hạn, chất béo dự trữ cũng tốt cho sức khỏe. Tuy nhiên nếu vượt quá lượng cơ thể cần, sức khỏe của bạn sẽ phải đối diện với những loại bệnh rất nguy hiểm.
+                </p>
+                <p>
+                    Tiêu hao, đốt cháy calo là nguyên lý không đổi của quá trình giảm cân. Calo được tiêu hao thông qua sự hoạt động của cơ thể, những hoạt động thường ngày và vận động thể chất. Nếu calo tiêu tốn cho những việc như ngủ, tắm, đọc sách, làm việc,.. khá ít thì mức calo cần cho việc tập thể dục lại cao hơn hẳn. Vì thế quá trình giảm cân không bao giờ thiếu được việc tập thể dục thể thao hàng ngày.
+                </p>
+                <p>
+                    Sự cân bằng giữa calo nạp vào và calo tiêu hao là sự cân bằng nhiệt lượng. Quá trình này diễn ra như một cái cân. Khi calo bạn ăn từ thực phẩm bằng với lượng calo mất đi do hoạt động thể chất, cân nặng của bạn sẽ được duy trì. Nếu bạn ăn ít calo hơn mức calo cơ thể sử dụng, bạn cũng sẽ giảm cân nhanh chóng. Khi lấy calo làm cột mốc để giảm cân, bạn đang triển khai một kế hoạch giảm cân khoa học và lành mạnh.
+                </p>
+                <center><img class="mt-2 img-fluid" src="http://127.0.0.1:8000/static/images/other(2).jpg" alt=""></center>
+            </div>
+            <h3 class="text-success"><b>2. Bảng calo cho từng loại thực phẩm</b></h3>
+            <div class="mx-3 text-center">
+                <h4><strong>2.1 Bảng calo trong Thịt/Hải sản/ Trứng</strong></h4>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Thực phẩm</th>
+                            <th scope="col">Calo/100 gram</th>
+                            <th scope="col">Thực phẩm</th>
+                            <th scope="col">Calo/100 gram</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thịt bò</td>
+                            <td>250</td>
+                            <td>Sữa tươi</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>Thịt lợn</td>
+                            <td>216</td>
+                            <td>Phô mai</td>
+                            <td>402</td>
+                        </tr>
+                        <tr>
+                            <td>Đùi gà</td>
+                            <td>214</td>
+                            <td>Váng sữa</td>
+                            <td>375</td>
+                        </tr>
+                        <tr>
+                            <td>Ức gà</td>
+                            <td>129</td>
+                            <td>Whey Protein</td>
+                            <td>420</td>
+                        </tr>
+                        <tr>
+                            <td>Cá hồi</td>
+                            <td>208</td>
+                            <td>Đậu phụ</td>
+                            <td>68</td>
+                        </tr>
+                        <tr>
+                            <td>Thịt cừu</td>
+                            <td>294</td>
+                            <td>Bơ động vật</td>
+                            <td>716</td>
+                        </tr>
+                        <tr>
+                            <td>Cua biển</td>
+                            <td>97</td>
+                            <td>Ngao</td>
+                            <td>92</td>
+                        </tr>
+                        <tr>
+                            <td>Trứng gà</td>
+                            <td>155</td>
+                            <td>Gạo trắng</td>
+                            <td>71</td>
+                        </tr>
+                        <tr>
+                            <td>Tôm</td>
+                            <td>99</td>
+                            <td>Trứng chim cút</td>
+                            <td>142</td>
+                        </tr>
+                        <tr>
+                            <td>Trứng vịt</td>
+                            <td>170</td>
+                            <td>Bơ lạc</td>
+                            <td>588</td>
+                        </tr>
+                        <tr>
+                            <td>Mực</td>
+                            <td>215</td>
+                            <td>Hàu</td>
+                            <td>199</td>
+                        </tr>
+                        <tr>
+                            <td>Yến mạch</td>
+                            <td>67</td>
+                            <td>Cá thu</td>
+                            <td>215</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4><b>Bảng tính calo trong các loại rau củ</b></h4>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Thực phẩm</th>
+                            <th scope="col">Calo/100 gram</th>
+                            <th scope="col">Thực phẩm</th>
+                            <th scope="col">Calo/100 gram</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bắp cải</td>
+                            <td>24</td>
+                            <td>Củ cải</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>Cà rốt</td>
+                            <td>41</td>
+                            <td>Rau mồng tơi</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>Khoai tây</td>
+                            <td>76</td>
+                            <td>Cải xoong</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>Nấm rơm</td>
+                            <td>22</td>
+                            <td>Rau chân vị<table></table></td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>Bông cải xanh</td>
+                            <td>33</td>
+                            <td>Bí đỏ</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>Cà chua</td>
+                            <td>17</td>
+                            <td>Nấm kim châm</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>Khoai lang</td>
+                            <td>85</td>
+                            <td>Khoai sọ</td>
+                            <td>64</td>
+                        </tr>
+                        <tr>
+                            <td>Rau muống</td>
+                            <td>30</td>
+                            <td>Bầu</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td>Cải thảo</td>
+                            <td>25</td>
+                            <td>Ớt chuông</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>Su hào</td>
+                            <td>27</td>
+                            <td>Xà lách</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Cần tây</td>
+                            <td>25</td>
+                            <td>Đậu nành</td>
+                            <td>92</td>
+                        </tr>
+                        <tr>
+                            <td>Đạu vô ve</td>
+                            <td>97</td>
+                            <td>Rau dền</td>
+                            <td>24</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="pt-5"><b>4.3 Bảng calo của một số loại món ăn hằng ngày</b></h4>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Món ăn</th>
+                            <th scope="col">Calo</th>
+                            <th scope="col">Chất béo</th>
+                            <th scope="col">Đường</th>
+                            <th scope="col">Đạm</th>
+                            <th scope="col">Chất xơ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bún bò</td>
+                            <td>662</td>
+                            <td>30.6</td>
+                            <td>56.4</td>
+                            <td>30.2</td>
+                            <td>2.76</td>
+                        </tr>
+                        <tr>
+                            <td>Bún riêu cua</td>
+                            <td>414</td>
+                            <td>12.2</td>
+                            <td>58</td>
+                            <td>17.8</td>
+                            <td>2.76</td>
+                        </tr>
+                        <tr>
+                            <td>Cháo lòng</td>
+                            <td>412</td>
+                            <td>13.5</td>
+                            <td>41.7</td>
+                            <td>30.8</td>
+                            <td>0.84</td>
+                        </tr>
+                        <tr>
+                            <td>Hủ tiếu mì</td>
+                            <td>410</td>
+                            <td>12.8</td>
+                            <td>56.9</td>
+                            <td>16.7</td>
+                            <td>1.36</td>
+                        </tr>
+                        <tr>
+                            <td>Bánh canh cua</td>
+                            <td>379</td>
+                            <td>8.4</td>
+                            <td>54.3</td>
+                            <td>21.4</td>
+                            <td>2.19</td>
+                        </tr>
+                        <tr>
+                            <td>Bò cuốn lá lốt</td>
+                            <td>841 / 8 cuốn</td>
+                            <td>12.5</td>
+                            <td>131.1</td>
+                            <td>49</td>
+                            <td>6.86</td>
+                        </tr>
+                        <tr>
+                            <td>Cá chim chiên</td>
+                            <td>111</td>
+                            <td>7.6</td>
+                            <td>0</td>
+                            <td>10.5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Chả lụa kho</td>
+                            <td>102</td>
+                            <td>4.6</td>
+                            <td>3.5</td>
+                            <td>11.7</td>
+                            <td>0.01</td>
+                        </tr>
+                        <tr>
+                            <td>Cá ngừ kho</td>
+                            <td>122</td>
+                            <td>1.8</td>
+                            <td>8.7</td>
+                            <td>17.7</td>
+                            <td>0.04</td>
+                        </tr>
+                        <tr>
+                            <td>Bánh bao chay</td>
+                            <td>110</td>
+                            <td>2.4</td>
+                            <td>17</td>
+                            <td>5.3</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr>
+                            <td>Bún thịt nướng</td>
+                            <td>451</td>
+                            <td>13.7</td>
+                            <td>33.4</td>
+                            <td>6.7</td>
+                            <td>0.64</td>
+                        </tr>
+                        <tr>
+                            <td>Cá mòi khô</td>
+                            <td>105</td>
+                            <td>5</td>
+                            <td>10.8</td>
+                            <td>4.3</td>
+                            <td>2.9</td>
+                        </tr>
+                        <tr>
+                            <td>Canh rau ngót</td>
+                            <td>23</td>
+                            <td>1.4</td>
+                            <td>1.1</td>
+                            <td>1.6</td>
+                            <td>0.63</td>
+                        </tr>
+                        <tr>
+                            <td>Gỏi</td>
+                            <td>156</td>
+                            <td>8.3</td>
+                            <td>22.8</td>
+                            <td>9.1</td>
+                            <td>2.93</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

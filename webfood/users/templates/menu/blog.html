@@ -1,0 +1,40 @@
+{% extends "users/templates/users/layouts/main.html" %}
+{% load static %}
+{% block title %}Suitable Food{% endblock %}
+{% block css %}{% static '/css/propose.css' %}{% endblock %}
+{% block link %} 
+<link rel="icon" type="image/png" href="{% static '/images/icons/logo.ico' %}" />
+{% endblock %}
+{% block content %}
+<div class="container">
+    
+    <h2 class="text-danger text-center"><strong>CHẾ ĐỘ ĂN PHÙ HỢP VỚI THỂ TRẠNG CỦA BẠN</strong></h2>
+
+    <div class="row mx-3 bg-light">
+        {% for item in diet %}
+        <div class="col-4">
+            <h4 class="text-danger"><strong>{{ item.name }}</strong></h3>
+            {{ item.data|safe }}
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    
+    <h2 class="text-danger text-center"><strong>ĐỀ XUẤT DÀNH CHO BẠN</strong></h2>
+    {% for item in blog %}
+        <div class="card mb-3 suggest">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img class="img-fluid w-50" src="{{ item.images }}" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{ item.link }}" style="text-decoration: none;">{{ item.title }}</a> <br></h5>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+</div>
+{% endblock %}

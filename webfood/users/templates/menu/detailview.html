@@ -1,0 +1,41 @@
+{% extends "users/templates/users/layouts/main.html" %}
+{% load static %}
+{% block title %}Thực đơn{% endblock %}
+{% block menu %}active{% endblock %}
+{% block link %} 
+<link rel="icon" type="image/png" href="{% static '/images/icons/logo.ico' %}" />
+<link rel="stylesheet" href="{% static '/css/comment.css' %}">
+{% endblock %}
+{% block content %}
+    {{ data.data|safe }}
+    
+    <div class="row m-5 shadow p-3 mb-5 bg-body rounded">
+        {%for comment in comments%}
+        <div class="col-2">
+            <p class="bg-primary p-1 text-center text-white d-none d-sm-block" style="border-top-left-radius: 10px;border-bottom-right-radius: 10px;">{{ comment.name }} </p>
+        </div>
+        <div class="col-7">
+            <p class="bg-light p-1 border-bottom-1 shadow rounded"> {{ comment.commentText }}</p>
+        </div>
+        <div class="col-3">
+            <p class="bg-primary p-1 text-center text-white d-none d-md-block" style="border-top-left-radius: 10px;border-bottom-right-radius: 10px;">{{ comment.time }}</p>
+        </div>
+        {%endfor %}
+
+        <h2 class="fs-5 mb-2" > Bình luận </h2>
+        <form method="post" >
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            <!-- <b>{{ user.username }}:</b> -->
+            {{form.as_p}}
+            <input class="btn btn-secondary" type ="button" value="Cancel">
+            <input class="btn btn-primary" type ="submit" value="Comment">
+            {% else %}
+            <a  type="button" class="btn bg-primary fw-bold text-white" href="{% url 'login' %}">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    Đăng nhập
+             </a>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

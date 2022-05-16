@@ -1,0 +1,173 @@
+{% extends "users/layouts/main.html" %}
+{% load static %}
+{% block title %}Ăn chay{% endblock %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/lost_gain.css' %} ">
+{% endblock %}
+{% block menu %}active{% endblock %}
+{% block content %}
+<!-- Showcase -->
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-center">
+            <div>
+                <h1>Giá trị của <span class="text-danger"> Ăn chay </span></h1>
+                    <p class="lead my-4">
+                        Một chế độ ăn chay hợp lý là cách để đáp ứng nhu cầu dinh dưỡng một cách lành mạnh. Nó sẽ giúp chúng ta tránh được nhiều bệnh tật mà vẫn đảm bảo sức khỏe.
+                    </p>
+                    <a href="{% url 'login' %}">
+                    <button
+                    class="btn btn-primary btn-lg"
+                >
+                    Đăng nhập
+                    </button>
+                </a>
+            </div>
+            <img
+                class="img-fluid w-50 d-none d-sm-block"
+                src="{% static '/images/vegan(1).jpg' %}"
+                alt=""
+                />
+        </div>
+    </div>
+</section>
+<!--end show case-->
+
+
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <h2 class="heading"><span>CHẾ ĐỘ ĂN CHAY</span> </h2>
+        <p>Khi nói về chế độ ăn chay, chúng ta thường nghĩ đến một chế độ ăn kiêng không bao gồm thịt, gia cầm hoặc cá. Nhưng thực tế có nhiều chế độ ăn chế độ ăn chay khác nhau và mỗi loại ăn chay lại có những thực phẩm loại trừ không giống nhau:</p>
+        <div class="row">
+            <h3>1. Chế độ ăn chay Lacto</h3>
+            <p class="mx-5">Loại trừ thịt, cá, thịt gia cầm và trứng, cũng như thực phẩm có chứa chúng. Người theo chế độ ăn chay này sẽ ăn các sản phẩm sữa, như sữa, phô mai, sữa chua và bơ.</p>
+        </div>
+        <div class="row">
+            <h3>2. Chế độ ăn chay Ovo</h3>
+            <p class="mx-5">Loại trừ thịt, gia cầm, hải sản và các sản phẩm từ sữa, nhưng cho phép trứng.</p>
+        </div>
+        <div class="row">
+            <h3>3. Chế độ ăn kiêng kiểu pittông</h3>
+            <p class="mx-5">Loại trừ thịt và gia cầm, sữa và trứng, nhưng cho phép cá.</p>
+        </div>
+        <div class="row">
+            <h3>4. Chế độ ăn chay không bao gồm thịt</h3>
+            <p class="mx-5">Thịt gia cầm, cá, trứng và các sản phẩm từ sữa - và thực phẩm có chứa các sản phẩm này.</p>
+        </div>
+        <div class="row">
+            <h3>5. Một số người theo chế độ ăn bán nguyệt</h3>
+            <p class="mx-5">Còn được gọi là chế độ ăn kiêng flexitarian - chủ yếu là chế độ ăn dựa trên thực vật nhưng bao gồm thịt, sữa, trứng, thịt gia cầm và cá trong một số lượng nhỏ.</p>
+        </div>
+    </div>
+</section>
+
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <h2 class="heading"><span>DINH DƯỠNG CẦN THIẾT</span> </h2>
+        <h3 class="text-danger">Canxi và Vitamin D</h3>
+        <p><strong>Canxi</strong> giúp xây dựng và duy trì răng xương chắc khỏe. Sữa và thực phẩm từ sữa có hàm lượng canxi cao nhất. Tuy nhiên, các loại rau xanh đậm như củ cải và rau xanh, cải xoăn và bông cải xanh,vv... là nguồn thực vật tốt khi ăn với số lượng đủ.</p>
+        <p><strong>Vitamin D</strong> đóng một vai trò quan trọng đối với sức khỏe của xương. Vitamin D thường được thêm vào sữa bò, một số nhãn hiệu sữa đậu nành và sữa gạo, và một số ngũ cốc và bơ thực vật.</p>
+        <center><img class="img-fluid px-3" src="{% static '/images/vegan(2).jpg' %}" alt=""></center>
+        <h3 class="text-danger">Vitamin B12</h3>
+        <p><strong>Vitamin B-12 </strong> rất cần thiết để tạo ra các tế bào hồng cầu và ngăn ngừa thiếu máu. Vitamin này được tìm thấy trong các sản phẩm động vật, vì vậy có thể khó có đủ B-12 trong chế độ ăn thuần chay. Ở những người ăn chế độ ăn thuần chay có khi không phát hiện ra sự thiếu hụt vitamin B12 do chế độ của họ rất giàu vitamin gọi là folate, có thể che giấu sự thiếu hụt vitamin B-12 cho đến khi xảy ra vấn đề nghiêm trọng. Vì lý do này, điều quan trọng đối với người ăn chay là xem xét bổ sung vitamin, ngũ cốc giàu vitamin và các sản phẩm từ đậu nành.</p>
+        <p>Uống bổ sung khoáng chất vitamin hàng ngày cung cấp đầy đủ các chất dinh dưỡng trên là một cách khác để đảm bảo đủ dinh dưỡng. Nếu bạn áp dụng chế độ ăn thuần chay, bạn cũng cần hiểu khái niệm về protein bổ sung. Thực phẩm thực vật chứa nhiều protein, nhưng axit amin của chúng không đầy đủ. Vì vậy, để đảm bảo đủ protein, hãy kết hợp ăn các loại thực phẩm thực vật khác nhau - ví dụ, bằng cách ăn đậu cùng với gạo.</p>
+        <h3 class="text-danger">Chất đạm</h3>
+        <p><strong>Protein</strong> giúp duy trì làn da, xương, cơ và các cơ quan khỏe mạnh. Trứng và các sản phẩm từ sữa là nguồn cung cấp protein rất tốt và nên được cung cấp với một lượng vừa đủ. Cơ thể cũng có thể nhận đủ protein từ thực phẩm có nguồn gốc thực vật nếu chúng ta ăn nhiều loại trong suốt cả ngày. Nguồn thực vật bao gồm các sản phẩm đậu nành và các chất thay thế thịt, các loại đậu, đậu lăng, các loại hạt, hạt và ngũ cốc.</p>
+        <h3 class="text-danger">Axit béo omega-3</h3>
+        <p><strong>Axit béo omega-3</strong> rất quan trọng đối với sức khỏe của tim. Chế độ ăn kiêng không bao gồm cá và trứng thường có hàm lượng axit béo omega-3 thấp. Dầu canola, dầu đậu nành, quả óc chó, đậu nành là nguồn cung cấp axit béo thiết yếu.</p>
+        <center><img class="img-fluid px-3" src="{% static '/images/vegan(3).jpg' %}" alt=""></center>
+        <h3 class="text-danger">Sắt và kẽm</h3>
+        <p><strong>Sắt </strong> là một thành phần quan trọng của các tế bào hồng cầu. Đậu khô và đậu Hà Lan, đậu lăng, ngũ cốc, các sản phẩm ngũ cốc nguyên hạt, rau xanh đậm và trái cây khô là những nguồn chất sắt tốt. Bởi vì sắt không dễ dàng được hấp thụ từ các nguồn thực vật, nên lượng sắt được khuyến nghị cho người ăn chay gần như gấp đôi so với khuyến nghị cho người không ăn chay. Để giúp cơ thể hấp thụ chất sắt, hãy ăn thực phẩm giàu vitamin C, chẳng hạn như dâu tây, trái cây họ cam quýt, cà chua, bắp cải và bông cải xanh, cùng lúc với việc bạn đang ăn thực phẩm có chứa sắt.</p>
+        <p>Giống như sắt, <strong>kẽm</strong> không dễ dàng được hấp thụ từ các nguồn thực vật như từ các sản phẩm động vật. Phô mai là một lựa chọn tốt nếu bạn ăn các sản phẩm từ sữa. Nguồn kẽm thực vật bao gồm ngũ cốc nguyên hạt, các sản phẩm từ đậu nành, các loại đậu, hạt và mầm lúa mì. Kẽm là thành phần thiết yếu của nhiều enzyme và đóng vai trò trong sự phân chia tế bào và hình thành protein.</p>
+        <h3 class="text-danger">Iốt</h3>
+        <p><strong>Iốt</strong> là một thành phần trong hormone tuyến giáp, giúp điều chỉnh sự trao đổi chất, tăng trưởng và chức năng của các cơ quan quan trọng. Người ăn chay có thể không nhận đủ iốt và có thể có nguy cơ bị thiếu và thậm chí có thể bị bướu cổ. Ngoài ra, các thực phẩm như đậu nành, rau họ cải và khoai lang có thể thúc đẩy bướu cổ.</p>
+    </div>
+</section>
+
+<section class="blogs" id="blogs">
+
+    <h2 class="heading"><span>Thực đơn</span> </h2>
+
+    <div class="box-container">
+
+        <div class="box text-center">
+            <img class="img-fluid" src="{% static '/images/vegan(7).jpg' %}" alt="">
+            <div class="content">
+                <h3>Món chay hiệu quả cho người ăn chay trường</h3>
+                <p>Ăn chay trường nhưng vẫn phải đảm bảo sức khoẻ cho người trong gia đình.</p>
+                <a href="{% url 'menu' 18 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div> 
+
+        <div class="box text-center">
+            <img class="img-fluid" src="{% static '/images/vegan(5).jpg' %}" alt="">
+            <div class="content">
+                <h3>Thực đơn ăn chay khoa học và đủ dinh dưỡng</h3>
+                <p>Thực đơn ăn chay đủ chất dinh dưỡng cho người bận rộn hằng ngày</p>
+                <a href="{% url 'menu' 17 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+        <div class="box text-center">
+            <img class="img-fluid" src="{% static '/images/vegan(6).jpg' %}" alt="">
+            <div class="content">
+                <h3>Chế độ dinh dưỡng hợp lý cho người ăn chay</h3>
+                <p>Bổ sung đầy đủ những dưỡng chất cần thiết giúp người ăn chay khỏe mạnh.</p>
+                <a href="{% url 'menu' 19 %}" class="btn btn-outline-dark">Chi tiết</a>
+            </div>
+        </div>
+
+</section>
+    
+<section>
+    <h2 class="heading"><span>Kiến thức</span></h2>
+    <div class="row py-2 justify-content-center">
+        <div class="col-md-6 col-12 col-lg-3 mb-4 mb-lg-0">
+            <div class="border p-3 border-warning">
+              <div class="text-center">
+                <img class="img-fluid" width="128px"  src="{% static '/images/vegan.jpg' %}" alt="">
+              </div>
+              <div class="text-center">
+                <h5 class="text-uppercase py-2">Ăn chay phù hợp</h5>
+                <p class="">
+                  Thực đơn ăn chay đủ chất dinh dưỡng cho người bận rộn.
+                </p>
+                <a href="{% url 'menu' 18 %}"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark">Chi tiết</button></a>
+              </div>
+            </div>
+          </div>
+        
+        <div class="col-md-6 col-12 col-lg-3 mb-4">
+            <div class="border p-3 border-warning">
+            <div class="text-center">
+                <img class="img-fluid" width="128px" src="{% static '/images/diet.jpg' %}" alt="">
+            </div>
+            <div class="text-center">
+                <h5 class="text-uppercase py-2">Thực phẩm phù hợp</h5>
+                <p class="">
+                Những loại thực phẩm không thể thiếu trong giai đoạn giảm cân.
+                </p>
+                <a href="{% url 'menu' 13 %}"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark">Chi tiết</button></a>
+            </div>
+            </div>
+        </div>
+    
+        <div class="col-md-6 col-12 col-lg-3 mb-4">
+            <div class="border p-3 border-warning">
+                <div class="text-center">
+                    <img class="img-fluid" width="128px"  src="{% static '/images/diet(2).jpg' %}" alt="">
+                </div>
+                <div class="text-center">
+                <h5 class="text-uppercase py-2">Giảm cân khoa học</h5>
+                <p class="">
+                Những bí quyết giảm cân an toàn và hiệu quả dành cho phụ nữ.
+                </p>
+                <a href="{% url 'menu' 6 %}"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark">Chi tiết</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

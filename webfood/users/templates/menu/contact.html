@@ -1,0 +1,110 @@
+{% extends "users/templates/users/layouts/main.html" %}
+{% load static %}
+{% block title %}Liên hệ{% endblock %}
+{% block contact %}active{% endblock %}
+{% block link %} 
+<link rel="icon" type="image/png" href="{% static '/images/icons/logo.ico' %}" />
+<link rel="stylesheet" type="text/css" href="{% static '/vendor/animate/animate.css' %} ">
+<link rel="stylesheet" type="text/css" href="{% static '/vendor/css-hamburgers/hamburgers.min.css' %} ">
+<link rel="stylesheet" type="text/css" href="{% static '/vendor/select2/select2.min.css' %} ">
+<link rel="stylesheet" type="text/css" href="{% static '/css/util.css' %} ">
+<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %} ">
+{% endblock %}
+{% block content %}
+    <div class="contact1">
+        <div class="container-contact1">
+            <div class="contact1-pic js-tilt" data-tilt>
+                <img src="{% static '/images/img-01.png' %}" alt="IMG">
+            </div>
+            
+            <!-- Modal -->
+            {% if messageSent %}
+                <div>
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="submitLabel">ĐÃ GỬI</h5>
+                    </div>
+                    <div class="modal-body">
+                        Cảm ơn bạn đã gửi ý kiến về cho chúng tôi. Chúc bạn có một ngày tốt lành !!!
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            {% else %}
+            <form class="contact1-form validate-form" method="post">
+                {% csrf_token %}
+                <span class="contact1-form-title" style="font-family: 'Courier New', Courier, monospace;">
+                    Mọi góp ý xin điền vào ô bên dưới
+                </span>
+
+                <div class="wrap-input1 validate-input" data-validate="Name is required">
+                    {{ form.name }}
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    {{ form.fromEmail }}
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="wrap-input1 validate-input" data-validate="Subject is required">
+                    {{ form.subject }}
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="wrap-input1 validate-input" data-validate="Message is required">
+                    {{ form.message }}
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="container-contact1-form-btn">
+                    <button class="contact1-form-btn" type="submit" data-bs-toggle="modal" data-bs-target="#submit">
+                        <span>
+                            Gửi Ngay
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+            <script src="{% static '/scripts/form.js' %}"></script>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block event %}
+    <!--===============================================================================================-->
+    <script src="{% static '/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static '/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static '/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static '/vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+
+    <!--===============================================================================================-->
+    <script src="{% static '/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/js/contact.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/css/search.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Product Filter</h1>
+            <!-- Search box -->
+            <div class="search-box">
+                <form action="" onsubmit="return false">
+                    <input type="text" id="search" placeholder="Search Product">
+                    <!-- <button id="btn-search">Search</button> -->
+                </form>
+            </div>
+            <div class="filter-box">
+                <a href="#" class="btn active" data-filter="all">All</a>
+                <a href="#" class="btn" data-filter="watch">Giảm cân</a>
+                <a href="#" class="btn" data-filter="shirt">Tăng cân</a>
+                <a href="#" class="btn" data-filter="gown">Ăn kiêng</a>
+                <a href="#" class="btn" data-filter="jewelry">Kiến thức</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="slide-container">
+        <section class="container" id="store-products">
+        
+        <!-- Loss Gaint -->
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/1000_calo(6).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>1000 calo/ngày</h2>
+                <p>Thực đơn giảm cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/lowcarbs(6).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Chế độ Lowcarbs</h2>
+                <p>Thực đơn giảm cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/blog_5.jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Eat clean</h2>
+                <p>Thực đơn giảm cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/blog_3.jpg' %}" alt="">
+            <div class="product-details">
+                <h2>800 - 1500 calo/ngày</h2>
+                <p>Thực đơn giảm cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/blog_1.jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Giảm cân nữ</h2>
+                <p>Thực đơn giảm cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/blog_6.jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Giảm cân khoa học</h2>
+                <p>Thực đơn giảm cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product loss">
+            <img class="img-fluid w-50" src="{% static '/images/slow_height.jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Bí quyết giảm cân</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <!-- End loss gaint -->
+        <!-- Weight Gain -->
+        <div class="store-product weight">
+            <img src="{% static '/images/gain(2).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Shirt Product</h2>
+                <p> Thực đơn tăng cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product weight">
+            <img src="{% static '/images/gain(2).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Shirt Product</h2>
+                <p> Thực đơn tăng cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product weight">
+            <img src="{% static '/images/gain(2).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Shirt Product</h2>
+                <p> Thực đơn tăng cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product weight">
+            <img src="{% static '/images/gain(2).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Shirt Product</h2>
+                <p> Thực đơn tăng cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product weight">
+            <img src="{% static '/images/gain(2).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Shirt Product</h2>
+                <p> Thực đơn tăng cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product weight">
+            <img src="{% static '/images/gain(2).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Shirt Product</h2>
+                <p> Thực đơn tăng cân</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <!-- Vegan -->
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Vegan">
+            <img src="{% static '/images/vegan(1).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Món chay hiệu quả</h2>
+                <p>Thực đơn ăn chay</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <!-- Knowledge -->
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(7).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Cải thiện chiều cao</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(8).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Thực phẩm dinh dưỡng</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(9).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Trái cây dinh dưỡng</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(10).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Bổ sung dưỡng chất</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(11).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Giảm cân hiệu quả</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(12).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Hạn chế tiếp thu</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+        <div class="store-product Knowledge">
+            <img src="{% static '/images/other(6).jpg' %}" alt="">
+            <div class="product-details">
+                <h2>Kiến thức khoa học</h2>
+                <p>Kiến thức</p>
+                <a href="#">Chi tiết</a>
+            </div>
+        </div>
+    </section>
+</div>
+</main>
+    
+    <script src="{% static '/js/search.js' %}"></script>
+</body>
+</html>
