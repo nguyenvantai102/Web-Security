@@ -1,0 +1,549 @@
+{% load static %}
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Almendra&family=League+Spartan:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@200;400&family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    nav {
+    	margin-bottom: 10px;
+        /* background-image: linear-gradient(to bottom, blue 10%, pink); */
+        {% comment %} background-color: #5b6467;
+        background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%); {% endcomment %}
+	    /* box-shadow: 0px 15px 10px -15px #111; */
+        background: #f8f9fa;
+    }
+
+    .navbar-brand {
+        font-family: 'Almendra', serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .nav a  {
+        font-family: 'Poppins', sans-serif;
+        color: #696d72;
+    	/* font-weight: bold; */
+    }
+
+    .active {
+        background-color: #80a4cf;
+        border-radius: 6px;
+    }
+
+    .nav-item + .nav-item {
+        margin: 0 5px 0 5px;
+    }
+
+    .nav-item:hover {
+        background-color: #80a4cf;
+        border-radius: 6px; 
+    }
+
+    .nav-link:hover {
+        color: #696d72;
+    }
+
+    .nav-link i:hover{
+        color: #696d72;
+    }
+
+    /* overlay */
+    .overlay {
+    	height: 100%;
+    	width: 100%;
+    	display: none;
+    	position: fixed;
+    	z-index: 10;
+    	top: 0;
+    	left: 0;
+    	background-color: rgb(0,0,0);
+    	background-color: rgba(0,0,0, 0.9);
+    }
+
+    .overlay-content {
+    	position: relative;
+    	top: 46%;
+    	width: 80%;
+    	text-align: center;
+    	margin-top: 30px;
+    	margin: auto;
+    }
+
+    .overlay .closebtn {
+    	position: absolute;
+    	top: 20px;
+    	right: 45px;
+    	font-size: 60px;
+    	cursor: pointer;
+    	color: white;
+    }
+
+    .overlay .closebtn:hover {
+    	color: rgb(192, 35, 35);
+    }
+
+    .overlay input[type=text] {
+    	padding: 15px;
+    	font-size: 17px;
+    	border: none;
+    	float: left;
+    	width: 80%;
+    	background: white;
+    	border-radius: 20px 0 0 20px;
+    }
+
+    .overlay input[type=text]:hover {
+    	background: #f1f1f1;
+    }
+
+    .overlay button {
+    	float: left;
+    	width: 15%;
+    	padding: 15px;
+    	background: #ddd;
+    	font-size: 17px;
+    	border: none;
+    	cursor: pointer;
+    	border-radius: 0 20px 20px 0;
+    }
+
+    .overlay button:hover {
+        background: #0082e6;
+    }
+
+
+    .carousel-item img {
+    	background-size: 20% 20%;
+    }
+
+
+
+    #food a {
+    	text-decoration: none;
+    }
+
+/* INFOR Calories */
+    #info_calories .block-heading {
+    	background-image: url("../images/titleBorder.png");
+    	background-repeat: repeat-x;
+    	height: 20px;
+    	margin: 30px 0;
+    	text-align: center;
+    }
+
+    #info_calories .block-heading h3 {
+    	background: #fff;
+    	display: inline-block;
+    	color: #000;
+    	margin-top: -28px;
+    	padding: 4px 5px 2px 30px;
+    	border: 1px solid #dedede;
+    }
+    #info_calories .block-heading h3:hover {
+    	box-shadow: 0 0 6px #dedede;
+    }
+
+/*	 Feature Start
+    ==================================================*/
+    #features .block {
+    	background:#90c322;
+    	color: #fff;
+    	padding: 4px;
+    	margin-bottom: 8px;
+    }
+    #features .block .media {
+    	border: 1px solid #fff;
+    }
+    #features .block .media-heading {
+    	margin-top: 10px;
+    	margin-bottom: 0;
+    	color: #fff;
+    }
+    #features .block i {
+    	font-size: 60px;
+    	margin: 15px 20px;
+    }
+
+    .products-heading {
+    	margin-top: 20px;
+    	background: url("../images/titleBorder.png");
+    	background-repeat: repeat-x;
+    }
+    .products-heading h2 {
+    	margin: 0px 0 20px ;
+    	border-top: 5px solid #90c322;
+    	display: inline-block;
+    }
+
+    /* MENU */
+    #menu .block-heading {
+    	background-image: url("../images/titleBorder.png");
+    	background-repeat: repeat-x;
+    	height: 20px;
+    	text-align: center;
+    	margin: 40px 0;
+    }
+
+    #menu .block {
+    	margin-top: 30px;
+    }
+    #menu .block-heading h2 {
+    	background: #fff;
+    	display: inline-block;
+    	color: rgb(12, 116, 236);
+    	margin-top: -28px;
+    	padding: 5px 30px 10px 30px;
+    	border: 1px solid #f01123;
+    }
+    #menu .block-heading h2:hover {
+    	box-shadow: 0 0 5px #dedede;
+    }
+
+    #scopy {
+    	float: right;
+    	position: fixed;
+    	left: 80%;
+    }
+
+    /* Search */
+    .mycontainer {
+    	height: 95%;
+    	overflow: auto;
+    }
+
+    .card-body-base {
+    	height: 16em;
+    	border: 1px solid rgb(0, 250, 167);
+    	border-radius: 3px; 
+    }
+
+    .overlay button {
+    	width: 100%;
+    	padding: 10px 5px;
+    	font-size: 15px;
+    	background-color: #5a63dd;
+    }
+
+    .card-base {
+    	height: 100%;
+    	max-height: 30em;
+    }
+
+    .page {
+    	margin: 0 5px;
+    	text-decoration: none;
+    }
+
+    .card-title-base {
+     	height: 50%;
+    } 
+
+    .card-description {
+    	height: 50%;
+    }
+
+    .card-title-base a {
+    	text-decoration: none;
+    	color: black;
+    	font-weight: bolder;
+    	cursor: pointer;
+    }
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid d-flex justify-content-around">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static '/images/logo.png' %}" alt="" width="35" height="29"
+                class="d-inline-block align-text-top">
+            Healthy Diet
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav me-auto mb-lg-0 mx-auto">
+            <li class="nav-item mx-1r">
+                <a class="nav-link {% block home %}{% endblock %}" href="/">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% block about %}{% endblock %} " href="">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% block service %}{% endblock %}" href="">Dịch vụ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% block contact %}{% endblock %}" href="">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% block menu %}{% endblock %}" href="">Menu</a>
+            </li>
+
+            {% if request.user.is_staff %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'manage' %}">Quản lý</a>
+                </li>
+            {% endif %}
+
+        </ul>
+        <ul class="nav navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-search" onclick="openSearch()"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'profile' %}" class="nav-link">{{ request.user.profile.name}}</a>
+              </li>
+          
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">
+                  logout
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-reverse-fill" viewBox="0 0 16 16">
+                    <path d="M0 3a2 2 0 0 1 2-2h7.08a2 2 0 0 1 1.519.698l4.843 5.651a1 1 0 0 1 0 1.302L10.6 14.3a2 2 0 0 1-1.52.7H2a2 2 0 0 1-2-2V3zm9.854 2.854a.5.5 0 0 0-.708-.708L7 7.293 4.854 5.146a.5.5 0 1 0-.708.708L6.293 8l-2.147 2.146a.5.5 0 0 0 .708.708L7 8.707l2.146 2.147a.5.5 0 0 0 .708-.708L7.707 8l2.147-2.146z"/>
+                  </svg>
+                </a>
+              </li>
+        </ul>
+    </div>
+    </div>
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+        <div class="container my-5 w-100 mycontainer">
+            <div id="mylist" class="card p-3">
+                <div class="row m-3">
+                    <div class="col-10 mt-2">
+                        <input type="search" class="search form-control" placeholder="Search...">
+                    </div>
+                    <div class="col-2 tlink-right">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button">
+                                Sort
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="sort" data-sort="name"><a href="#" class="dropdown-item">By name</a></li>
+                                <li class="sort" data-sort="description"><a href="#" class="dropdown-item">By description</a></li>
+                                <li class="sort" data-sort="date"><a href="#" class="dropdown-item">By date</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list row"></div>
+                <div class="d-flex justify-content-center mt-2">
+                    <ul class="pagination"></ul>
+                </div>
+            </div>
+            <div style="display: none;">
+                <div id="myitem" class="col-md-4" style="margin-bottom: 20px;">
+                    <div class="card mt-3 card-base" style="background: rgba(180, 247, 225, 0.41)">
+                        <div class="card-body card-body-base" style="margin-top: 0; font-weight: bold;">
+                            <div class="card-title card-title-base">
+                                <p style="display: none;" class="link card-link-temp"></p>
+                                <a href="" class="name card-link" onmousedown="getLink()" style="color: rgb(231, 53, 53)"></a>
+                                <p style="display: none;" class="name_temp"></p>
+                            </div>
+                            <div class="card-description"><small class="description tlink-muted"></small></div>
+                            <p style="display: none;" class="description_temp"></p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <div class="date"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        </div>  
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script>
+            const data = [
+                {
+                    name: "CHẾ ĐỘ ĂN 1000 CALO MỖI NGÀY, THỰC ĐƠN ĂN KIÊNG 7 NGÀY TRONG TUẦN GIẢM CÂN HIỆU QUẢ",
+                    name_temp: "CHE DO AN 1000 CALO MOI NGAY, THUC DON AN KIENG 7 NGAY TRONG TUAN GIAM CAN HIEU QUA",
+                    description: "Chế độ ăn uống 1000 calo tập trung vào bữa ăn nhỏ hơn và thường xuyên cũng như giảm lượng chất béo, đường và carbohydrate",
+                    description_temp: "Che do an uong 1000 calo tap trung vao bua an nho hon va thuong xuyen cung nhu giam luong chat beo, duong va carbohydrate",
+                    link: "http://127.0.0.1:8000/menu/1",
+                    date: "2021/11/12",
+                },
+                {
+                    name: "THỰC ĐƠN LOW CARB GIẢM CÂN TRONG 7 NGÀY, THƠM NGON ĐỦ CHẤT",
+                    name_temp: "THUC DON LOW CARB GIAM CAN TRONG 7 NGAY, THOM NGON DU CHAT",
+                    description: "Chế độ ăn giảm cân Low Carb là một phương pháp ăn kiêng có vẻ \"dễ thở\" vì bạn không bị giới hạn lượng calo nạp vào.",
+                    description_temp: "Che do an giam can Low Carb la mot phuong phap an kieng co ve \"de tho\" vi ban khong bi gioi han luong calo nap vao.",
+                    link: "http://127.0.0.1:8000/menu/2",
+                    date: "2021/11/1",
+                },
+                {
+                    name: "THỰC ĐƠN GIẢM CÂN 800 - 1500 CALO",
+                    name_temp: "THUC DON GIAM CAN 800 - 1500 CALO",
+                    description: "Thực đơn giảm cân với những mức calo cụ thể, thích hợp với những phụ nữ muốn giảm cân nhanh chóng và hiệu quả.",
+                    description_temp: "Thuc don giam can voi nhung muc calo cu the, thich hop voi nhung phu nu muon giam can nhanh chong va hieu qua.",
+                    link: "http://127.0.0.1:8000/menu/3",
+                    date: "2021/10/3",
+                },
+                {
+                    name: "THỰC ĐƠN GIẢM CÂN CHO NỮ",
+                    name_temp: "THUC DON GIAM CAN CHO NU",
+                    description: "Thực đơn giảm cân cho nữ với những món ăn vừa đảm bảo dinh dưỡng vừa không ảnh hưởng đến kế hoạch giảm cân.",
+                    description_temp: "Thuc don giam can cho nu voi nhung mon an vua dam bao dinh duong vua khong anh huong den ke hoach giam can.",
+                    link: "http://127.0.0.1:8000/menu/4",
+                    date: "2021/11/25",
+                },
+                {
+                    name: "THỰC ĐƠN EAT CLEAN",
+                    name_temp: "THUC DON EAT CLEAN",
+                    description: "Thực đơn eat clean giá rẻ dành cho học sinh, sinh viên giảm cân hiệu quả và hợp lý",
+                    description_temp: "Thuc don eat clean gia re danh cho hoc sinh, sinh vien giam can hieu qua va hop ly",
+                    link: "http://127.0.0.1:8000/menu/5",
+                    date: "2021/10/25",
+                },
+                {
+                    name: "THỰC ĐƠN GIẢM CÂN 7 NGÀY \"CHUẨN\" KHOA HỌC",
+                    name_temp: "THUC DON GIAM CAN 7 NGAY \"CHUAN\" KHOA HOC",
+                    description: "Thực đơn giảm cân vừa đảm bảo chất dinh dưỡng vừa giảm cân hiệu quả, phù hợp với chế độ dinh dưỡng khoa học",
+                    description_temp: "Thuc don giam can vua dam bao chat dinh duong vua giam can hieu qua, phu hop voi che do dinh duong khoa hoc",
+                    link: "http://127.0.0.1:8000/menu/6",
+                    date: "2021/10/17",
+                },
+                {
+                    name: "LƯỢNG CALO TRONG MỖI LOẠI THỰC PHẨM",
+                    name_temp: "LUONG CALO TRONG MOI LOAI THUC PHAM",
+                    description: "Calo không chỉ là mức đo năng lượng của thực phẩm. Khái niệm này còn được mở rộng hơn nữa khi chỉ mức độ cân bằng dinh dưỡng.",
+                    description_temp: "Calo khong chi la muc do nang luong cua thuc pham. Khai niem nay con duoc mo rong hon nua khi chi muc do can bang dinh duong.",
+                    link: "http://127.0.0.1:8000/menu/7",
+                    date: "2020/11/4",
+                },
+                {
+                    name: "THỰC PHẨM GIÚP CẢI THIỆN CHIỀU CAO TRẺ EM",
+                    name_temp: "THUC PHAM GIUP CAI THIEN CHIEU CAO TRE EM",
+                    description: "Mặc dù chiều cao phụ thuộc phần lớn vào di truyền, nhưng việc bổ sung đủ chất dinh dưỡng trong chế độ ăn uống của bạn là hoàn toàn cần thiết",
+                    description_temp: "Mac du chieu cao phu thuoc phan lon vao di truyen, nhung viec bo sung du chat dinh duong trong che do an uong cua ban la hoan toan can thiet",
+                    link: "http://127.0.0.1:8000/menu/8",
+                    date: "2021/12/5",
+                },
+                {
+                    name: "THỰC PHẨM TỐT CHO SỨC KHỎE GIÁ RẺ",
+                    name_temp: "THUC PHAM TOT CHO SUC KHOE GIA RE",
+                    description: "Nhiều người quan niệm rằng ăn những loại thực phẩm lành mạnh rất tốn kém và chúng ta phải chi nhiều tiền hơn cho một thực đơn \“healthy\”",
+                    description_temp: "Nhieu nguoi quan niem rang an nhung loai thuc pham lanh manh rat ton kem va chung ta phai chi nhieu tien hon cho mot thuc don \“healthy\”",
+                    link: "http://127.0.0.1:8000/menu/9",
+                    date: "2020/11/1",
+                },
+                {
+                    name: "NHỮNG LOẠI TRÁI CÂY CẦN BỔ SUNG VÀO CHẾ ĐỘ ĂN UỐNG",
+                    name_temp: "NHUNG LOAI TRAI CAY CAN BO SUNG VAO CHE DO AN UONG",
+                    description: "Trái cây chứa nhiều vitamin, khoáng chất, chất xơ và các hợp chất thực vật được gọi là dinh dưỡng thực vật.",
+                    description_temp: "Trai cay chua nhieu vitamin, khoang chat, chat xo va cac hop chat thuc vat duoc goi la dinh duong thuc vat.",
+                    link: "http://127.0.0.1:8000/menu/10",
+                    date: "2021/11/17",
+                },
+                {
+                    name: "THỰC PHẨM GIẢM CÂN HIỆU QUẢ CHO CƠ THỂ",
+                    name_temp: "THUC PHAM GIAM CAN HIEU QUA CHO CO THE",
+                    description: "Lựa chọn những loại thực phẩm đóng vai trò quyết định trong những bài giảm cân hiệu quả mà vẫn đầy đủ dinh dưỡng.",
+                    description_temp: "Lua chon nhung loai thuc pham dong vai tro quyet dinh trong nhung bai giam can hieu qua ma van day du dinh duong.",
+                    link: "http://127.0.0.1:8000/menu/11",
+                    date: "2021/5/7",
+                },
+                {
+                    name: "THỰC PHẨM HẠN CHẾ HẤP THU",
+                    name_temp: "THUC PHAM HAN CHE HAP THU",
+                    description: "Thực phẩm là nguồn dinh dưỡng thiết yếu cho sức khỏe. Tuy nhiên, không phải thực phẩm nào cũng tốt và tiêu thụ bao nhiêu cũng được.",
+                    description_temp: "Thuc pham la nguon dinh duong thiet yeu cho suc khoe. Tuy nhien, khong phai thuc pham nao cung tot va tieu thu bao nhieu cung duoc.",
+                    link: "http://127.0.0.1:8000/menu/12",
+                    date: "2021/11/7",
+                },
+                {
+                    name: "BỔ SUNG DƯỠNG CHẤT CHO TRẺ EM",
+                    name_temp: "BO SUNG DUONG CHAT CHO TRE EM",
+                    description: "Trong thời gian phát triển của trẻ nhỏ, cung cấp những loại thực phẩm dinh dưỡng và an toàn ảnh hưởng rất lớn đến cơ thể.",
+                    description_temp: "Trong thoi gian phat trien cua tre nho, cung cap nhung loai thuc pham dinh duong va an toan anh huong rat lon den co the.",
+                    link: "http://127.0.0.1:8000/menu/13",
+                    date: "2021/12/1",
+                },
+                {
+                    name: "THỰC ĐƠN ĂN CHAY HÀNG NGÀY 7 NGÀY TRONG TUẦN ĐẦY ĐỦ CHẤT DINH DƯỠNG, ĂN CHAY MỘT CÁCH KHOA HỌC",
+                    name_temp: "THUC DON AN CHAY HANG NGAY 7 NGAY TRONG TUAN DAY DU CHAT DINH DUONG, AN CHAY MOT CACH KHOA HOC",
+                    description: "Ăn chay hay ăn mặn bạn vẫn phải đảm bảo dinh dưỡng trong khẩu phần thực đơn hàng ngày.",
+                    description_temp: "An chay hay an man ban van phai dam bao dinh duong trong khau phan thuc don hang ngay.",
+                    link: "http://127.0.0.1:8000/menu/14",
+                    date: "2021/11/8",
+                },
+                {
+                    name: "MÓN CHAY BỔ DƯỠNG CHO NGƯỜI ĂN CHAY TRƯỜNG",
+                    name_temp: "MON CHAY BO DUONG CHO NGUOI AN CHAY TRUONG",
+                    description: "Lựa chọn những món ăn chay cho gia đình đảm bảo được độ dinh dưỡng cũng như sự thanh tịnh trong mỗi món ăn",
+                    description_temp: "Lua chon nhung mon an chay cho gia dinh dam bao duoc do dinh duong cung nhu su thanh tinh trong moi mon an",
+                    link: "http://127.0.0.1:8000/menu/15",
+                    date: "2021/11/28",
+                },
+                {
+                    name: "THIẾT KẾ THỰC ĐƠN ĂN CHAY ĐÚNG VÀ ĐỦ",
+                    name_temp: "THIET KE THUC DON AN CHAY DUNG VA DU",
+                    description: "Thiết kế một thực đơn ăn chay phải có sự lựa chọn và xem xét tỉ mỉ giữa các loại thực phẩm để có thể đem lại một thực đơn hợp lý nhất.",
+                    description_temp: "Thiet ke mot thuc don an chay phai co su lua chon va xem xet ti mi giua cac loai thuc pham de co the dem lai mot thuc don hop ly nhat.",
+                    link: "http://127.0.0.1:8000/menu/16",
+                    date: "2021/11/13",
+                },
+                {
+                    name: "THỰC ĐƠN TĂNG CÂN CHO NGƯỜI GẦY KINH NIÊN TĂNG 3KG TRONG 1 TUẦN",
+                    name_temp: "THUC DON TANG CAN CHO NGUOI GAY KINH NIEN TANG 3KG TRONG 1 TUAN",
+                    description: "Bạn đang muốn tăng cân cấp tốc… Nhưng ăn mãi mà vẫn không mập không tăng cân được",
+                    description_temp: "Ban dang muon tang can cap toc… Nhung an mai ma van khong map khong tang can duoc",
+                    link: "http://127.0.0.1:8000/menu/17",
+                    date: "2021/10/29",
+                },
+                {
+                    name: "TOP 3 THỰC ĐƠN TĂNG CÂN CHO NGƯỜI GẦY TRONG 1 TUẦN CHI TIẾT NHẤT",
+                    name_temp: "TOP 3 THUC DON TANG CAN CHO NGUOI GAY TRONG 1 TUAN CHI TIET NHAT",
+                    description: "Những thực đơn đem lại cho bạn kết quả trên cả tuyệt vời trong quá trình cải thiện cân nặng của mình",
+                    description_temp: "Nhung thuc don dem lai cho ban ket qua tren ca tuyet voi trong qua trinh cai thien can nang cua minh",
+                    link: "http://127.0.0.1:8000/menu/18",
+                    date: "2021/11/30",
+                },
+                {
+                    name: "TOP 21 SIÊU THỰC PHẨM TĂNG CÂN CHO NGƯỜI GẦY",
+                    name_temp: "TOP 21 SIEU THUC PHAM TANG CAN CHO NGUOI GAY",
+                    description: "Những siêu thực phẩm giúp đẩy nhanh quá trình tăng cân của bạn một cách hiệu quả và an toàn",
+                    description_temp: "Nhung sieu thuc pham giup day nhanh qua trinh tang can cua ban mot cach hieu qua va an toan",
+                    link: "http://127.0.0.1:8000/menu/19",
+                    date: "2021/11/26",
+                },
+            ]
+    
+            const options = {
+                valueNames: ['name', 'description', 'link', 'date'],
+                item: 'myitem',
+                page: 3,
+                pagination: true,
+            }
+    
+            new List('mylist', options, data);
+        </script>
+        
+        <script>
+            function getLink() {
+                var linkTemps = document.querySelectorAll('.card-link-temp');
+                var links = document.querySelectorAll('.card-link');
+                var length = links.length;
+                for (var i = 0; i < length; i++) {
+                    links[i].href = linkTemps[i].textContent;
+                }
+            }
+        </script>
+        <script src="{% static '/bootstrap/js/bootstrap.js' %}"></script>
+        <script src="{% static '/js/main.js' %}"></script>
+        
+    </div>
+</nav>
+

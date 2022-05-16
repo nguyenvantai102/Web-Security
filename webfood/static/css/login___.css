@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-image: url(https://image.freepik.com/free-vector/flying-slice-pizza-cartoon-vector-illustration-fast-food-concept-isolated-vector-flat-cartoon-style_138676-1934.jpg);
+    font-size: 62.5%;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-size: 700px;
+  }
+  
+  .form {
+  width: 360px;
+  min-height: 100px;
+  padding: 32px 32px;
+  text-align: center;
+  background: rgba(216, 224, 231, 0.7);
+  /* border-radius: 2px; */
+  /* margin: 24px; */
+  /* border: 2px solid; */
+  box-shadow: 5px 10px 8px 10px #888888;
+  border-radius: 15px;
+  border-color: black;
+  align-self: center;
+  /* background-color: aliceblue; */
+  box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+  }
+  
+
+
+  .form .heading {
+  font-size: 3rem;
+  }
+  
+  .form .desc {
+  text-align: center;
+  color: #636d77;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  line-height: 2.4rem;
+  margin-top: 16px;
+  font-weight: 300;
+  }
+  
+  .form-group {
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+  }
+  
+  .form-label,
+  .form-message {
+  text-align: center;
+  }
+  
+
+  .form-label {
+  font-weight: 700;
+  padding-bottom: 6px;
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+  }
+  
+  .form-group input {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1.4rem;
+  }
+  
+  .form-group input:hover {
+  border-color: #1dbfaf;
+  }
+  
+  .form-group.invalid .input {
+  border-color: #f33a58;
+  }
+  
+  .form-group.invalid .form-message {
+  color: #f33a58;
+  }
+  
+  .form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
+  }
+  
+  .form-submit {
+  outline: none;
+  background-color: #1dbfaf;
+  margin: 12px 0;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  }
+  
+  .form-submit:hover {
+  background-color: #1ac7b6;
+  }
+  
+  .spacer {
+  margin-top: 36px;
+  }
+  
+  .errorlist {
+  display: none;
+  }
+  
+  #message {
+  display: none;
+  }
+  

@@ -1,0 +1,132 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{% static '/images/icons/logo.ico' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static '/fonts/icomoon/style.css' %} ">
+
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+
+    <title> Đăng nhập </title>
+    
+    <style>
+      ::placeholder {
+        color: #2F8F9D;
+        font-size: 12px; 
+      }
+    </style>
+
+  </head>
+
+  <body>
+  
+
+  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'images/undraw_remotely_2j6y.svg' %}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Welcome to our website!</h3>
+              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            </div>
+            <form action="#" method="POST">
+              {% csrf_token %}
+              <div class="form-group first">
+                {% comment %} <label for="username">Username</label> {% endcomment %}
+                <input type="text" class="form-control" id="username" name="username" placeholder="username">
+
+              </div>
+              <div class="form-group last mb-4">
+                {% comment %} <label for="password">Password</label> {% endcomment %}
+                <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                
+              </div>
+              
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0" ><span class="caption">Show password</span>
+                  <input type="checkbox" onclick="myFunction()"/>
+                  <div class="control__indicator"></div>
+                </label>
+                {% comment %} <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>  {% endcomment %}
+              </div>
+
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+
+              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+              
+              <div class="social-login">
+                <style>
+                  .facebook:hover{
+                    transform: scale(1.1);
+                  }
+                  .twitter:hover{
+                    transform: scale(1.1);
+                  }
+                  .google:hover{
+                    transform: scale(1.1);
+                  }
+                </style>
+
+                <a href="#" class="facebook mr-2">
+                  <span class="icon-facebook mr-4"></span> 
+                </a>
+                <a href="#" class="twitter mr-2">
+                  <span class="icon-twitter mr-4"></span> 
+                </a>
+                <a href="#" class="google mr-2">
+                  <span class="icon-google mr-4"></span> 
+                </a>
+              </div>
+            </form>
+            <div class=" p-t-26">
+              <a class="txt2" href="{% url 'register' %}">
+                Create your Account
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-reverse-fill" viewBox="0 0 16 16">
+                  <path d="M0 3a2 2 0 0 1 2-2h7.08a2 2 0 0 1 1.519.698l4.843 5.651a1 1 0 0 1 0 1.302L10.6 14.3a2 2 0 0 1-1.52.7H2a2 2 0 0 1-2-2V3zm9.854 2.854a.5.5 0 0 0-.708-.708L7 7.293 4.854 5.146a.5.5 0 1 0-.708.708L6.293 8l-2.147 2.146a.5.5 0 0 0 .708.708L7 8.707l2.146 2.147a.5.5 0 0 0 .708-.708L7.707 8l2.147-2.146z"/>
+                </svg>
+              </a>
+            </div>
+
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "text") {
+        x.type = "password";
+      } else {
+        x.type = "text";
+      }
+    }
+  </script>
+    <script src="{% static '/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/login.js' %} "></script>
+  </body>
+</html>

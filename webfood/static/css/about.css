@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra&family=Poppins:wght@200;400&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Almendra', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav  a  {
+    color: #696d72;
+	font-weight: bold;
+}
+
+.active {
+    background-color: #80a4cf;
+    border-radius: 6px;
+}
+
+.nav-item + .nav-item {
+    margin: 0 5px 0 5px;
+}
+
+.nav-item:hover {
+    background-color: #80a4cf;
+    border-radius: 6px; 
+}
+
+.nav-link:hover {
+    color: #696d72;
+}
+
+.nav-link i:hover{
+    color: #696d72;
+}
+
+/* overlay */
+.overlay {
+	height: 100%;
+	width: 100%;
+	display: none;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+	position: relative;
+	top: 46%;
+	width: 80%;
+	text-align: center;
+	margin-top: 30px;
+	margin: auto;
+}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+	cursor: pointer;
+	color: white;
+}
+
+.overlay .closebtn:hover {
+	color: rgb(192, 35, 35);
+}
+
+.overlay input[type=text] {
+	padding: 15px;
+	font-size: 17px;
+	border: none;
+	float: left;
+	width: 80%;
+	background: white;
+	border-radius: 20px 0 0 20px;
+}
+
+.overlay input[type=text]:hover {
+	background: #f1f1f1;
+}
+
+.overlay button {
+	float: left;
+	width: 15%;
+	padding: 15px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+	border-radius: 0 20px 20px 0;
+}
+
+.overlay button:hover {
+    background: #0082e6;
+}
+
+.tittle {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.tittle h1 {
+    font-family: 'Almendra', serif;
+    border-bottom: 3px solid #0082e6 ;
+}
+
+.content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-body i {
+    font-size: 24px;
+    color: #696d72;
+    padding: 0 10px 0 0 ;
+}
+
