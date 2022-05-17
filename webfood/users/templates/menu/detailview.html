@@ -12,7 +12,7 @@
     <div class="row m-5 shadow p-3 mb-5 bg-body rounded">
         {%for comment in comments%}
         <div class="col-2">
-            <p class="bg-primary p-1 text-center text-white d-none d-sm-block" style="border-top-left-radius: 10px;border-bottom-right-radius: 10px;">{{ comment.name }} </p>
+            <p class="bg-primary p-1 text-center text-white d-none d-sm-block" style="border-top-left-radius: 10px;border-bottom-right-radius: 10px;">{{ comment.user.profile.name }} </p>
         </div>
         <div class="col-7">
             <p class="bg-light p-1 border-bottom-1 shadow rounded"> {{ comment.commentText }}</p>

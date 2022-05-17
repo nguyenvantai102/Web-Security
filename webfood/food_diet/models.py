@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -24,14 +26,12 @@ class Blog(models.Model):
     #     return self.link
 
 class Comment(models.Model):
-    name = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.EmailField(max_length=50)
     commentText = models.TextField()
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now_add=True)
      
-    def __str__(self):
-        return f"Comment by Name: {self.name}"
 
 class Diet(models.Model):
     id = models.IntegerField(primary_key=True)
