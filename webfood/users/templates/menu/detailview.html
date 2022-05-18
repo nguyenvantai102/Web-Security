@@ -9,10 +9,15 @@
 {% block content %}
     {{ data.data|safe }}
     
-    <div class="row m-5 shadow p-3 mb-5 bg-body rounded">
+    <div id="Comment" class="row m-5 shadow p-3 mb-5 bg-body rounded">
         {%for comment in comments%}
         <div class="col-2">
             <p class="bg-primary p-1 text-center text-white d-none d-sm-block" style="border-top-left-radius: 10px;border-bottom-right-radius: 10px;">{{ comment.user.profile.name }} </p>
+            {% if comment.user.profile.name == user.profile.name %}
+            <a type="button" href="{% url 'deleteComment' comment.id %}">
+                <i class="fa fa-trash" aria-hidden="true" ></i>
+            </a>
+            {% endif %}
         </div>
         <div class="col-7">
             <p class="bg-light p-1 border-bottom-1 shadow rounded"> {{ comment.commentText }}</p>
@@ -29,7 +34,14 @@
             <!-- <b>{{ user.username }}:</b> -->
             {{form.as_p}}
             <input class="btn btn-secondary" type ="button" value="Cancel">
-            <input class="btn btn-primary" type ="submit" value="Comment">
+            <input class="btn btn-primary" type ="submit" value="Comment" onclick="printFlag()">
+            <!-- Just for fun -->
+            <script>
+                function printFlag() {
+                    if(document.getElementById("id_commentText").value.toLowerCase().includes("hello world"))
+                        alert("Flag{" + "{{ user.profile.name }}" + "_dep_nhat_dem_nay}")
+                }
+            </script>
             {% else %}
             <a  type="button" class="btn bg-primary fw-bold text-white" href="{% url 'login' %}">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>

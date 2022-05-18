@@ -1,8 +1,4 @@
-{% extends "users/templates/users/layouts/main.html" %}
-{% load static %}
-{% block title %}Dịch Vụ{% endblock %}
-
-{% block link %} 
+{% extends "users/templates/users/layouts/main.html" %} {% load static %} {% block title %}Dịch Vụ{% endblock %} {% block link %}
 <link rel="icon" type="image/png" href="{% static '/images/icons/logo.ico' %}" />
 <link rel="stylesheet" type="text/css" href="{% static '/vendor/animate/animate.css' %} ">
 <link rel="stylesheet" type="text/css" href="{% static '/vendor/css-hamburgers/hamburgers.min.css' %} ">
@@ -10,146 +6,193 @@
 <link rel="stylesheet" type="text/css" href="{% static '/css/util.css' %} ">
 <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %} ">
 <link rel="stylesheet" type="text/css" href="{% static '/css/service.css' %} ">
-<link rel="stylesheet" type="text/css" href="{% static '/css/add-ques-card.css' %} ">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-{% endblock %}
-
-{% block service %}active{% endblock %}
-{% block content %}
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'> {% endblock %} {% block service %}active{% endblock %} {% block content %}
 <div class="services pd">
-        <div class="container">
-            <h3 class="title">Thông tin của bạn</h3>
-            <div class="row d-flex justify-content-center " style=" height: 450px;overflow-x: hidden; background-image: url(https://i.imgur.com/GMmCQHC.png); background-repeat: no-repeat; background-size: 100% 100%">
+<div class="container">
+<h3 class="title">Thông tin của bạn </h3>
+<div class="row d-flex justify-content-center " style=" height: 450px;overflow-x: hidden; background-image: url(https://i.imgur.com/GMmCQHC.png); background-repeat: no-repeat; background-size: 100% 100%">
+<form class="contact1-form validate-form d-flex flex-column justify-content-between" method="post">
+{% csrf_token %}
 
-                <form class="contact1-form validate-form d-flex flex-column " method="post">
-                    {% csrf_token %}
-                    <div class="wrap-input1 validate-input align-self-lg-center" style="max-width: 500px;" data-validate="Name is required">
-                        <input class="input1" type="text" name="gender" placeholder="Giới tính (Định dạng: Nam/Nữ)">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="wrap-input1 validate-input align-self-lg-center" style="max-width: 500px;" data-validate="Age is required">
-                        <input class="input1" type="text" name="age" placeholder="Tuổi">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="wrap-input1 validate-input align-self-lg-center" style="max-width: 500px;" data-validate="High is required">
-                        <input class="input1" type="text" name="high" placeholder="Chiều cao (cm)">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="wrap-input1 validate-input align-self-lg-center" style="max-width: 500px;" data-validate="weight is required">
-                        <input class="input1" type="text" name="weight" placeholder="Cân nặng (kg)">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="container-contact1-form-btn align-self-lg-center" style="max-width: 500px;">
-                        <button class="contact1-form-btn" type="submit" data-bs-toggle="modal" data-bs-target="#submit">
-                            <span>
-                                Gửi Ngay
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                </form>
-    
-        </div>
-            <h3 class="title">Dịch vụ của chúng tôi</h3>
-            <div class="row d-flex justify-content-center align-items-center">
-                
-            </div>
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <div class="square"><i class="fas fa-heartbeat"></i></i></div>
-                    <div class="serv">
-                        <h5>Cung cấp thực đơn</h5>
-                        <p>Ăn uống hợp lý là một việc vô cùng quan trọng đối với mỗi chúng ta. Nhưng hầu hết mọi người sẽ không biết ăn uống như thế nào là hợp lý.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="serv">
-                        <div class="square"><i class="fas fa-dumbbell"></i></div>
-                        <h5>Bổ sung kiến thức</h5>
-                        <p>Kiến thức về các loại thực phẩm là vô cùng cần thiết để xây dựng một thực đơn hợp lý và đảm bảo giá trị dinh dưỡng cũng như sức khỏe</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="square"><i class="fas fa-hamburger"></i></div>
-                    <div class="serv">
-                        <h5>Những lợi ích</h5>
-                        <p>Chúng tôi sẽ dựa vào những thông tin cơ thể để đưa ra cho bạn những thực đơn phù hợp nhất để cân đối lại khẩu phần của bạn.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="square"><i class="fas fa-user-shield"></i></div>
-                    <div class="serv">
-                        <h5>Đánh giá</h5>
-                        <p>Chúng tôi đã tìm hiểu những loại thực phẩm và thực đơn phù hợp nhất để cung cấp cho mọi người có cái nhìn toàn vẹn về lượng dinh dưỡng cũng như lượng calo hấp thụ</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <h3 class="title">Kiểm tra kiến thức</h3>
-            <section id="gallery">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 mb-4">
-                            <div class="card">
-                                <img src="http://127.0.0.1:8000/static/images/1000_calo(5).jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Dinh dưỡng</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                                    <a href="{% url 'quiz' %}" class="btn btn-outline-success btn-sm">Chơi ngay</a>
-                                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="card">
-                                <img src="http://127.0.0.1:8000/static/images/vegan(9).jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Thực phẩm</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                                    <a href="{% url 'quiz' %}" class="btn btn-outline-success btn-sm">Chơi ngay</a>
-                                    <a href="" class="btn btn-outline-danger btn-sm">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="card">
-                                <img src="http://127.0.0.1:8000/static/images/other(9).jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Trái cây</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                                    <a href="{% url 'quiz' %}" class="btn btn-outline-success btn-sm">Chơi ngay</a>
-                                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <br>
-            {% if request.user.is_staff %}
-            <h3 class="title">Tạo câu hỏi</h3>
-            <section id="add_question">
-                <div class="container">
-                    <div class="card" style="width: 30rem; justify-items: center; display: flex; left: 30%;">
-                        <img src="http://127.0.0.1:8000/static/images/bg_member.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Add Question</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                            <a href="{% url 'addQuestion' %}" class="btn btn-outline-success btn-sm">Tạo ngay </a>
-                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {% endif %}
-        </div>
-    </div>
-    <script src="{% static '/js/service.js' %}"></script>
+
+
+<div class="wrap-input1 validate-input align-self-lg-center criteria" style="max-width: 500px;" data-validate=" Gender is required ">
+<select id="gender" class="form-select rounded-pill select-criteria " name="gender ">
+<option selected="selected " disabled="disabled ">Giới tính</option>
+<option>Nam</option>
+<option>Nữ</option>
+</select>
+</div>
+
+
+
+<div class="wrap-input1 validate-input align-self-lg-center criteria " style="max-width: 500px;" data-validate="Age is required ">
+<select id="age" class="form-select rounded-pill select-criteria " name="age ">
+<option selected="selected " disabled="disabled ">Tuổi</option>
+</select>
+</div>
+
+
+
+<div class="wrap-input1 validate-input align-self-lg-center criteria " style="max-width: 500px;" data-validate="High is required ">
+<select id="high " class="form-select rounded-pill select-criteria " name="high ">
+<option selected="selected " disabled="disabled ">Chiều cao (cm)</option>
+</select>
+</div>
+
+
+
+<div class="wrap-input1 validate-input align-self-lg-center criteria " style="max-width: 500px;" data-validate="weight is required ">
+<select id="weight " class="form-select rounded-pill select-criteria " name="weight ">
+<option selected="selected " disabled="disabled ">Cân nặng (kg)</option>
+</select>
+</div>
+
+
+
+<div class="container-contact1-form-btn align-self-lg-center " style="max-width: 500px; ">
+<button id="sendInfo " class="contact1-form-btn " type="submit " data-bs-toggle="modal " data-bs-target="#submit ">
+<span>
+Gửi Ngay
+<i class="fa fa-long-arrow-right " aria-hidden="true "></i>
+</span>
+</button>
+</div>
+</form>
+</div>
+<!-- -->
+
+
+
+<h3 class="title ">Dịch vụ của chúng tôi</h3>
+<div class="row d-flex justify-content-center align-items-center ">
+
+
+
+</div>
+<div class="row text-center ">
+<div class="col-md-3 ">
+<div class="square "><i class="fas fa-heartbeat "></i></i>
+</div>
+<div class="serv ">
+<h5>Cung cấp thực đơn</h5>
+<p>Ăn uống hợp lý là một việc vô cùng quan trọng đối với mỗi chúng ta. Nhưng hầu hết mọi người sẽ không biết ăn uống như thế nào là hợp lý.</p>
+</div>
+</div>
+<div class="col-md-3 ">
+<div class="serv ">
+<div class="square "><i class="fas fa-dumbbell "></i></div>
+<h5>Bổ sung kiến thức</h5>
+<p>Kiến thức về các loại thực phẩm là vô cùng cần thiết để xây dựng một thực đơn hợp lý và đảm bảo giá trị dinh dưỡng cũng như sức khỏe</p>
+</div>
+</div>
+<div class="col-md-3 ">
+<div class="square "><i class="fas fa-hamburger "></i></div>
+<div class="serv ">
+<h5>Những lợi ích</h5>
+<p>Chúng tôi sẽ dựa vào những thông tin cơ thể để đưa ra cho bạn những thực đơn phù hợp nhất để cân đối lại khẩu phần của bạn.</p>
+</div>
+</div>
+<div class="col-md-3 ">
+<div class="square "><i class="fas fa-user-shield "></i></div>
+<div class="serv ">
+<h5>Đánh giá</h5>
+<p>Chúng tôi đã tìm hiểu những loại thực phẩm và thực đơn phù hợp nhất để cung cấp cho mọi người có cái nhìn toàn vẹn về lượng dinh dưỡng cũng như lượng calo hấp thụ</p>
+</div>
+</div>
+</div>
+<br>
+<h3 class="title ">Kiểm tra kiến thức</h3>
+<section id="gallery ">
+<div class="container ">
+<div class="row ">
+<div class="col-lg-4 mb-4 ">
+<div class="card ">
+<img src="http://127.0.0.1:8000/static/images/1000_calo(5).jpg " alt=" " class="card-img-top ">
+<div class="card-body ">
+<h5 class="card-title ">Dinh dưỡng</h5>
+<p class="card-text ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+<a href="{% url 'quiz' %} " class="btn btn-outline-success btn-sm ">Chơi ngay</a>
+<a href=" " class="btn btn-outline-danger btn-sm "><i class="far fa-heart "></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 mb-4 ">
+<div class="card ">
+<img src="http://127.0.0.1:8000/static/images/vegan(9).jpg " alt=" " class="card-img-top ">
+<div class="card-body ">
+<h5 class="card-title ">Thực phẩm</h5>
+<p class="card-text ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+<a href="{% url 'quiz' %} " class="btn btn-outline-success btn-sm ">Chơi ngay</a>
+<a href=" " class="btn btn-outline-danger btn-sm ">
+<i class="far fa-heart "></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 mb-4 ">
+<div class="card ">
+<img src="http://127.0.0.1:8000/static/images/other(9).jpg " alt=" " class="card-img-top ">
+<div class="card-body ">
+<h5 class="card-title ">Trái cây</h5>
+<p class="card-text ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+<a href="{% url 'quiz' %} " class="btn btn-outline-success btn-sm ">Chơi ngay</a>
+<a href=" " class="btn btn-outline-danger btn-sm "><i class="far fa-heart "></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<br> {% if request.user.is_staff %}
+<h3 class="title ">Tạo câu hỏi</h3>
+<section id="add_question ">
+<div class="container ">
+<div class="card " style="width: 30rem; justify-items: center; display: flex; left: 30%; ">
+<img src="http://127.0.0.1:8000/static/images/bg_member.jpg " alt=" " class="card-img-top ">
+<div class="card-body ">
+<h5 class="card-title ">Add Question</h5>
+<p class="card-text ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+<a href="{% url 'addQuestion' %} " class="btn btn-outline-success btn-sm ">Tạo ngay </a>
+<a href=" " class="btn btn-outline-danger btn-sm "><i class="far fa-heart "></i></a>
+</div>
+</div>
+</div>
+</section>
+{% endif %}
+</div>
+</div>
+<script src="{% static '/js/service.js' %} "></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+<script>
+var $select = $(".select-criteria ").not("#gender, #age");
+var $age = $("#age");
+for (i = 1; i <= 200; i++) {
+$select.append($('<option></option>').val(i).html(i))
+}
+for (i = 1; i <= 80; i++) {
+$age.append($('<option></option>').val(i).html(i))
+}
+
+
+
+
+
+document.getElementById("sendInfo ").onclick = function(e) {
+var isGenderNotSelected = $("#gender option:selected ").text() == "Giới tính ";
+var isAgeNotSelected = $("#age option:selected ").text() == "Tuổi ";
+var isHighNotSelected = $("#high option:selected ").text() == "Chiều cao (cm) ";
+var isWeightNotSelected = $("#weight option:selected ").text() == "Cân nặng (kg) ";
+
+
+
+if (isGenderNotSelected || isAgeNotSelected || isHighNotSelected || isWeightNotSelected) {
+e.preventDefault();
+alert("Vui lòng điền đầy đủ thông tin! ");
+}
+}
+</script>
 {% endblock %}

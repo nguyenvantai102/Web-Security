@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from food_diet.models import Blog, Diet
 
 from .decorators import admin_only, unauthenticated_user, allowed_users
@@ -10,7 +10,13 @@ from .forms import CreateUserForm, ProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 from .models import Profile
-# Create your views here.
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from .tokens import account_activation_token
+from django.utils.encoding import force_bytes, force_text
+from django.contrib.auth.models import User
 
 @unauthenticated_user
 def loginUser (request):
@@ -34,8 +40,11 @@ def registerPage(request):
     form = CreateUserForm()
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
-        if form.is_valid:
-            user = form.save()
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
+            current_site = get_current_site(request)
 
             username = form.cleaned_data.get('username')
 
@@ -46,15 +55,39 @@ def registerPage(request):
 				user=user,
 				name=user.username,
 			)
+            mail_subject = 'Activate your account.'
+            message = render_to_string('active_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            to_email = form.cleaned_data.get('email')
+            email = EmailMessage(
+                mail_subject, message, to=[to_email]
+            )
+            email.send()
 
-            messages.success(request, "Dang ky thanh cong!" + username)
-            form = CreateUserForm()
-
-            return redirect('login')
-
+            return HttpResponse('Tạo tài khoản thành công, vui lòng kiểm tra email để kích hoạt tài khoản')
     context = {'form':form}
     return render(request, 'users/templates/users/register.html', context)
 
+# Activate registration
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        return redirect('home')
+        #return HttpResponse('Cảm ơn bạn đã xác nhận email. Tài khoản của bạn đã được kích hoạt')
+    else:
+        return HttpResponse('Liên kết kích hoạt tài khoản không hợp lệ!')
 
 @login_required(login_url='login')
 def home(request):

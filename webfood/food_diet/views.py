@@ -66,6 +66,11 @@ def BlogDetailView(request, _id):
         }
     return render(request, 'users/templates/menu/detailview.html', context)
 
+def deleteComment(request, id):
+    cmt = Comment.objects.get(pk = id)
+    blogID = cmt.blog.id
+    cmt.delete()
+    return redirect(f'/menu/{blogID}#Comment')
 
 def menu_view(request):
     return render(request, 'food_diet/templates/menu.html')

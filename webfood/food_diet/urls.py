@@ -6,6 +6,8 @@ urlpatterns = [
     path('menu', views.menu_view, name='menu'),
     path('contact', views.handleFeedback, name='contact'),
     path('menu/<int:_id>', views.BlogDetailView, name='menu'),
+    path('delete/<int:id>', views.deleteComment, name='deleteComment'),
+    
     #Begin loss gain
     path('menu/LossGain', views.loss_gain_view, name='lossgain'),
     path('menu/lossgain/1000calo', views.loss_gain_paper_1_view, name='paper_lg(1)'),

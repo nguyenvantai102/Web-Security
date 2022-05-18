@@ -607,6 +607,10 @@ label.valid {
     margin-right: 0px;
     margin-bottom: 10px; } }
 
+    #message p {
+        padding-left: 35px;
+        font-size: 18px;
+    }
     </style>
 </head>
 
@@ -649,7 +653,7 @@ label.valid {
                             </div>
 
                             <div class="form-group form-button" style="margin-bottom: 30px">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" onclick="checkInput()"/>
                             </div>
                         </form>
                     </div>
@@ -683,10 +687,69 @@ label.valid {
 		  for (var field in form_fields){	
 		  	form_fields[field].className += ' form-control'
 		  }
+
+      var myInput = document.getElementById("id_password1");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var number = document.getElementById("number");
+      var length = document.getElementById("length");
+
+      var hasLowerCaseLetter = false
+      var hasUpperCaseLetter = false
+      var hasNumber = false
+      var hasLengthGTOE8 = false
+
+      myInput.setAttribute("pattern", "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+      // When the user starts to type something inside the password field
+      myInput.oninput = function() {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+          hasLowerCaseLetter = true;
+        }
+        else {
+          hasLowerCaseLetter = false;
+        }
+      
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+          hasUpperCaseLetter = true;
+        }
+        else {
+          hasUpperCaseLetter = false;
+        }
+      
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+          hasNumber = true;
+        }
+        else {
+          hasNumber = false;
+        }
+      
+        // Validate length
+        if (myInput.value.length >= 8) {
+          hasLengthGTOE8 = true
+        }
+        else {
+          hasLengthGTOE8 = false
+        }
+      }
+
+      function checkInput() {
+        if (hasLowerCaseLetter && hasUpperCaseLetter && hasNumber && hasLengthGTOE8) {
+          alert("Đăng ký thành công")
+        }
+        else {
+          alert("Mật khẩu không hợp lệ, cần có ít nhất:\n\t1 chữ hoa\n\t1 chữ thường\n\t1 chữ số\n\tĐộ dài tối thiểu 8 ký tự")
+        }
+      }
     </script>
     <script src=" {% static 'vendor/jquery/jquery.min.js' %} "></script>
     <script src="https://kit.fontawesome.com/02876ccd43.js" crossorigin="anonymous"></script>
 </body>
-<!--flag {co cai nit} -->
+<!-- flag{co_cai_nit} -->
 
 </html>
